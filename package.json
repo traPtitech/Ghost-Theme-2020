@@ -32,6 +32,7 @@
         "webpack": "^3.9.1"
     },
     "config": {
-        "posts_per_page": 12
+        "posts_per_page": 12,
+        "pagination_pages": 7
     }
 }
