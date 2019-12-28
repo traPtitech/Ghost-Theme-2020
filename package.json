@@ -11,11 +11,11 @@
     },
     "dependencies": {
         "font-awesome": "^4.7.0",
-        "highlight.js": "^9.12.0",
-        "katex": "^0.10.0-beta",
-        "normalize.css": "^7.0.0",
+        "highlight.js": "^9.17.1",
+        "katex": "^0.11.1",
+        "normalize.css": "^8.0.1",
         "typeface-notosans-jp": "^1.0.1",
-        "typeface-source-code-pro": "^0.0.44"
+        "typeface-source-code-pro": "^0.0.71"
     },
     "devDependencies": {
         "babel-core": "^6.26.0",
