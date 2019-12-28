@@ -2,10 +2,14 @@ const path = require("path");
 const webpack = require("webpack");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StyleExtHtmlWebpackPlugin = require("style-ext-html-webpack-plugin");
 
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
+
 module.exports = {
+	mode: "production",
 	entry: "./assets/js/app.js",
 	output: {
 		filename: "app.js",
@@ -13,34 +17,46 @@ module.exports = {
 		publicPath: "/assets/built/",
 	},
 	module: {
-		loaders: [{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			loader: "babel-loader",
-			query: {presets: ["env"]},
-		}, {
-			test: /critical\.css$/,
-			loader: ExtractTextWebpackPlugin.extract("css-loader"),
-		}, {
-			test: /\.css$/,
-			exclude: /critical\.css$/,
-			loader: "style-loader!css-loader",
-		}, {
-			test: /\.svg$/,
-			loader: "file-loader!svgo-loader",
-		}, {
-			test: /\.(eot|ttf|otf|woff2?)$/,
-			loader: "file-loader",
-		}],
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: "babel-loader",
+					options: {
+						presets: ["@babel/preset-env"]
+					}
+				}
+			}, {
+				test: /critical\.css$/,
+				use: [MiniCssExtractPlugin.loader, "css-loader"],
+			},{
+				test: /\.css$/,
+				exclude: /critical\.css$/,
+				use: ["style-loader", "css-loader"]
+			}, {
+				test: /\.svg$/,
+				use: ["file-loader", "svgo-loader"]
+			}, {
+				test: /\.(eot|ttf|otf|woff2?)$/,
+				use: "file-loader",
+			}
+		],
 	},
 	plugins: [
-		new webpack.optimize.UglifyJsPlugin(),
 		new HtmlWebpackPlugin({
 			filename: "../../default.hbs",
 			template: "default.src.hbs",
 			hash: true,
 		}),
-		new ExtractTextWebpackPlugin("critical.css"),
-		new StyleExtHtmlWebpackPlugin({minify: true}),
+		new MiniCssExtractPlugin({ filename: "critical.css" }),
+		new StyleExtHtmlWebpackPlugin({ minify: true }),
 	],
+	optimization: {
+		minimize: true,
+		minimizer: [
+			new TerserPlugin({}),
+			new OptimizeCSSAssetsPlugin({})
+		]
+	}
 };
