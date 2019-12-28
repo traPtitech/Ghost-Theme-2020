@@ -28,7 +28,7 @@ jobs:
           cp -r ./.git ${{ runner.temp }}/built/.git
           cp -f ./.gitignore ${{ runner.temp }}/built
           find . -maxdepth 1 -not -iname "." | xargs rm -r
-          cp -r ${{ runner.temp }}/built -T .
+          cp -r -T ${{ runner.temp }}/built .
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Build"
           git add .
