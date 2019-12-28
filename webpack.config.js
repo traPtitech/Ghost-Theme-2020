@@ -5,6 +5,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StyleExtHtmlWebpackPlugin = require("style-ext-html-webpack-plugin");
 
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
+
 module.exports = {
 	mode: "production",
 	entry: "./assets/js/app.js",
@@ -49,4 +52,11 @@ module.exports = {
 		new MiniCssExtractPlugin({ filename: "critical.css" }),
 		new StyleExtHtmlWebpackPlugin({ minify: true }),
 	],
+	optimization: {
+		minimize: true,
+		minimizer: [
+			new TerserPlugin({}),
+			new OptimizeCSSAssetsPlugin({})
+		]
+	}
 };
