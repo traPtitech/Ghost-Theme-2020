@@ -1,0 +1,21 @@
+{{#if feature_image}}
+	<a href="{{url}}" class="article" style="background-image: url('{{feature_image}}')">
+{{else}}
+	<a href="{{url}}" class="article noimg">
+{{/if}}
+	<div class="meta">
+		<small>{{date published_at format="YYYY年M月D日"}}</small>
+		<br>
+		<strong>{{title}}</strong>
+		<div class="author">
+			{{#author}}
+				{{#if profile_image}}
+					<img src="{{profile_image}}">
+				{{else}}
+					<img src="https://q.trapti.tech/icon/traP">
+				{{/if}}
+				<span>{{name}}</span>
+			{{/author}}
+		</div>
+	</div>
+</a>
