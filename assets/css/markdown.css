@@ -1,0 +1,148 @@
+/****************/
+/* BASIC STYLES */
+/****************/
+article h1,
+article h2,
+article h3 {
+	margin-top: 1.4em;
+}
+article h1 {
+	color: #005bac;
+	font-weight: 200;
+	padding: 0 0 .3em .1em;
+	border-bottom: 1px dashed #aaa;
+}
+article h2 {
+	color: #666;
+	font-weight: 200;
+	padding: .2em 0 .2em .6em;
+	border-left: 4px solid #aaa;
+}
+article p {
+	line-height: 1.8em;
+}
+article blockquote {
+	color: #777;
+	margin-left: 1em;
+	padding: 1px 1em;
+	border-left: 6px solid #ddd;
+}
+article code {
+	font-family: "Source Code Pro", monospace;
+}
+article p code {
+	border: 1px solid #eaeaea;
+	background-color: #fafafa;
+	border-radius: 2px;
+	padding: .1em .3em;
+	margin: 0 .1em;
+}
+article pre {
+	overflow-x: auto;
+	border: 1px solid #eaeaea;
+	background-color: #f8f8f8;
+	border-radius: 2px;
+	padding: .8em;
+	tab-size: 4;
+	-o-tab-size: 4;
+	-moz-tab-size: 4;
+}
+article li {
+	margin: .4em 0;
+}
+article hr {
+	height: 1px;
+	border: none;
+	border-top: 1px solid #aaa;
+	margin: 2em 0;
+}
+article a {
+	color: #47d;
+	text-decoration: none;
+}
+article a:hover {
+	text-decoration: underline;
+}
+article table {
+	border-collapse: collapse;
+}
+article table td,
+article table th {
+	border: 1px solid #ddd;
+	padding: .3em 1em;
+}
+article table th {
+	background-color: #fafafa;
+}
+article mark {
+	background-color: #fd9;
+}
+article img {
+	max-width: 100%;
+}
+
+
+/********************/
+/* CONTAINER STYLES */
+/********************/
+article .success, article .info, article .warning, article .danger {
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+article .success p:first-of-type, article .info p:first-of-type, article .warning p:first-of-type, article .danger p:first-of-type {
+  margin-top: 0;
+}
+article .success p:last-of-type, article .info p:last-of-type, article .warning p:last-of-type, article .danger p:last-of-type {
+  margin-bottom: 0;
+}
+article .success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+}
+article .info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border: 1px solid #bce8f1;
+}
+article .warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
+}
+article .danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+}
+
+
+/****************/
+/* KATEX STYLES */
+/****************/
+article .katex-display {
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+
+/***************/
+/* HLJS STYLES */
+/***************/
+article .blog-code {
+  position: relative;
+}
+article .blog-code code {
+	overflow-x: visible;
+	padding: 0;
+}
+article .blog-code cite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 4px;
+  font-size: .8em;
+  color: #333;
+  background: #ddd;
+}
