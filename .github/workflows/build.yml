@@ -21,10 +21,13 @@ jobs:
       - name: commit
         run: |
           rm -r ./node_modules
-          cp -r . ${{ runner.temp }}
-          rm -r ${{ runner.temp }}/.git
+          mkdir -p ${{ runner.temp }}/built
+          cp -r . ${{ runner.temp }}/built
+          rm -rf ${{ runner.temp }}/built/.git
           git checkout built
-          mv -f ${{ runner.temp }} .
+          cp -r ./.git ${{ runner.temp }}/built/.git
+          find . -maxdepth 1 -not -iname "." | xargs rm -r
+          cp -r ../tmp/built -T .
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Build"
           git add .
