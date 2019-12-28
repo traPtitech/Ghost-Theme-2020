@@ -1,19 +1,13 @@
 {
-    "name": "traP-theme-2017",
+    "name": "trap-theme-2020",
     "private": true,
     "version": "1.0.0",
     "engines": {
         "ghost": ">=1.0.0"
     },
-    "author": {
-        "name": "traP System Administrators",
-        "email": "trapsysad@gmail.com"
-    },
-    "config": {
-        "posts_per_page": 12
-    },
+    "author": "traP",
     "scripts": {
-        "install": "webpack"
+        "build": "webpack"
     },
     "dependencies": {
         "font-awesome": "^4.7.0",
@@ -36,5 +30,8 @@
         "svgo": "^1.0.5",
         "svgo-loader": "^2.1.0",
         "webpack": "^3.9.1"
+    },
+    "config": {
+        "posts_per_page": 12
     }
 }
