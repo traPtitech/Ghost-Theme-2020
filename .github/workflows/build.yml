@@ -14,15 +14,26 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - name: install
+        run: yarn install
       - name: build
         run: npm run build
       - name: commit
         run: |
+          rm -r ./node_modules
+          mkdir -p ${{ runner.temp }}/built
+          cp -r . ${{ runner.temp }}/built
+          rm -rf ${{ runner.temp }}/built/.git
           git checkout built
+          cp -r ./.git ${{ runner.temp }}/built/.git
+          find . -maxdepth 1 -not -iname "." | xargs rm -r
+          cp -r ${{ runner.temp }}/built -T .
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Build"
-          git commit -m "Automatic Build" -a
+          git add .
+          git commit -m "Automatic Build"
       - name: push
         uses: ad-m/github-push-action@02b0b75d447f0098d40d0d65a3e6cdf2119e6f60
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GitHubToken }}
+          branch: built
