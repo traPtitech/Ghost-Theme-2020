@@ -23,7 +23,7 @@ jobs:
           git checkout built
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Build"
-          git commit -m "Automatic Build" -a
+          git commit -m "Automatic Build" -A
       - name: push
         uses: ad-m/github-push-action@02b0b75d447f0098d40d0d65a3e6cdf2119e6f60
         with:
