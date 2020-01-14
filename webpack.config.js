@@ -30,7 +30,7 @@ module.exports = {
 			}, {
 				test: /critical\.css$/,
 				use: [MiniCssExtractPlugin.loader, "css-loader"],
-			},{
+			}, {
 				test: /\.css$/,
 				exclude: /critical\.css$/,
 				use: ["style-loader", "css-loader"]
@@ -59,7 +59,15 @@ module.exports = {
 	optimization: {
 		minimize: true,
 		minimizer: [
-			new TerserPlugin({}),
+			new TerserPlugin({
+				terserOptions: {
+					ecma: 2015,
+					output: {
+						beautify: false
+					}
+				},
+				extractComments: "some"
+			}),
 			new OptimizeCSSAssetsPlugin({})
 		]
 	}
