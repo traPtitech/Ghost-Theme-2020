@@ -1,12 +1,12 @@
 const path = require("path");
-const webpack = require("webpack");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StyleExtHtmlWebpackPlugin = require("style-ext-html-webpack-plugin");
+const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
 	mode: "production",
@@ -48,9 +48,13 @@ module.exports = {
 			filename: "../../default.hbs",
 			template: "default.src.hbs",
 			hash: true,
+			inject: "head"
 		}),
 		new MiniCssExtractPlugin({ filename: "critical.css" }),
 		new StyleExtHtmlWebpackPlugin({ minify: true }),
+		new ScriptExtHtmlWebpackPlugin({
+			defaultAttribute: "async"
+		})
 	],
 	optimization: {
 		minimize: true,
