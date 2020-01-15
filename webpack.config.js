@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StyleExtHtmlWebpackPlugin = require("style-ext-html-webpack-plugin");
 const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -63,6 +64,17 @@ module.exports = {
 		new ScriptExtHtmlWebpackPlugin({
 			chunks: "app",
 			defaultAttribute: "async"
+		}),
+		new PreloadWebpackPlugin({
+			chunks: "app",
+			rel: "prefetch",
+			include: "allAssets",
+			fileBlacklist: [/critical\.css/],
+			as(entry) {
+				if (/\.css$/.test(entry)) return 'style';
+				if (/\.(?:woff2?|[to]tf)$/.test(entry)) return 'font';
+				return 'script';
+			}
 		}),
 		new FixStyleOnlyEntriesPlugin()
 	],
