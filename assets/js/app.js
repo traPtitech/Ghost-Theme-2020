@@ -7,7 +7,6 @@ import "typeface-notosans-jp";
 import "typeface-source-code-pro";
 
 import "../css/style.css";
-import "../css/critical.css";
 import "../css/markdown.css";
 
 // fill copyright year
