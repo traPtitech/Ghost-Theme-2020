@@ -4,15 +4,19 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const StyleExtHtmlWebpackPlugin = require("style-ext-html-webpack-plugin");
 const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
 	mode: "production",
-	entry: "./assets/js/app.js",
+	entry: {
+		app: "./assets/js/app.js",
+		critical: "./assets/css/critical.css"
+	},
 	output: {
-		filename: "app.js",
+		filename: "[name].js",
 		path: path.join(__dirname, "assets", "built"),
 		publicPath: "/assets/built/",
 	},
@@ -33,7 +37,7 @@ module.exports = {
 			}, {
 				test: /\.css$/,
 				exclude: /critical\.css$/,
-				use: ["style-loader", "css-loader"]
+				use: [MiniCssExtractPlugin.loader, "css-loader"]
 			}, {
 				test: /\.svg$/,
 				use: ["file-loader", "svgo-loader"]
@@ -45,16 +49,22 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
+			chunks: "app",
 			filename: "../../default.hbs",
 			template: "default.src.hbs",
 			hash: true,
 			inject: "head"
 		}),
-		new MiniCssExtractPlugin({ filename: "critical.css" }),
-		new StyleExtHtmlWebpackPlugin({ minify: true }),
+		new MiniCssExtractPlugin({ filename: "[name].css" }),
+		new StyleExtHtmlWebpackPlugin("critical.css", {
+			chunks: "app",
+			minify: true
+		}),
 		new ScriptExtHtmlWebpackPlugin({
+			chunks: "app",
 			defaultAttribute: "async"
-		})
+		}),
+		new FixStyleOnlyEntriesPlugin()
 	],
 	optimization: {
 		minimize: true,
