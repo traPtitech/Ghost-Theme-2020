@@ -43,7 +43,6 @@
         "lodash": "^4.17.12"
     },
     "config": {
-        "posts_per_page": 12,
-        "pagination_pages": 7
+        "posts_per_page": 12
     }
 }
