@@ -48,6 +48,7 @@ ul.nav a {
 	color: inherit;
 	text-decoration: none;
 	transition: 250ms background-color, 250ms color;
+	word-break: keep-all;
 }
 ul.nav a:hover {
 	background-color: #005bac;
