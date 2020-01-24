@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
 		{{#is "post,page"}}
-			{{post.title}} | {{@blog.title}}
+			{{post.title}} | {{@site.title}}
 		{{else}}
 			{{meta_title}}
 		{{/is}}
@@ -61,13 +61,13 @@
 			<a href="/about/" class="mail-footer">
 				<i class="fa fa-envelope-o" aria-hidden="true"></i>
 			</a>
-			{{#if @blog.twitter}}
-				<a target="_blank" href="{{twitter_url @blog.twitter}}" class="twitter-footer">
+			{{#if @site.twitter}}
+				<a target="_blank" href="{{twitter_url @site.twitter}}" class="twitter-footer">
 					<i class="fa fa-twitter" aria-hidden="true"></i>
 				</a>
 			{{/if}}
-			{{#if @blog.facebook}}
-				<a target="_blank" href="{{facebook_url @blog.facebook}}" class="facebook-footer">
+			{{#if @site.facebook}}
+				<a target="_blank" href="{{facebook_url @site.facebook}}" class="facebook-footer">
 					<i class="fa fa-facebook" aria-hidden="true"></i>
 				</a>
 			{{/if}}

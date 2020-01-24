@@ -682,7 +682,7 @@ article .orig-link > img {
 	top: -3px;
 }
 
-#author-detail {
+#authors-detail {
 	margin: 0 auto;
 	width: 70%;
 	display: flex;
@@ -690,7 +690,7 @@ article .orig-link > img {
 	border-radius: 2px;
 	border: 1px solid #aaa;
 }
-#author-detail img {
+#authors-detail img {
 	flex: 0 0 auto;
 	width: 80px;
 	height: 80px;
@@ -698,35 +698,35 @@ article .orig-link > img {
 	border: 1px solid #ddd;
 	background-color: #fff;
 }
-#author-detail div {
+#authors-detail div {
 	margin-left: 1em;
 }
-#author-detail a {
+#authors-detail a {
 	text-decoration: none;
 }
-#author-detail small {
+#authors-detail small {
 	color: #999;
 	font-weight: 200;
 }
-#author-detail .name {
+#authors-detail .name {
 	color: #666;
 	font-weight: 200;
 	font-size: 1.8rem;
 }
-#author-detail .link {
+#authors-detail .link {
 	padding: 0em .2em;
 	position: relative;
 	top: -2px;
 	left: .2em;
 }
-#author-detail p {
+#authors-detail p {
 	margin: .5em 0;
 }
 @media (max-width: 500px) {
-	#author-detail {
+	#authors-detail {
 		flex-direction: column;
 	}
-	#author-detail img {
+	#authors-detail img {
 		margin-left: 1em;
 	}
 }

@@ -29,7 +29,7 @@
 			{{tags separator=" "}}
 		</div>
 	</div>
-	{{#author}}
+	{{#foreach author}}
 		<div class="author">
 			<a href="{{url}}">
 				{{#if profile_image}}
@@ -40,30 +40,32 @@
 				<span>{{name}}</span>
 			</a>
 		</div>
-	{{/author}}
+	{{/foreach}}
 {{/is}}
 </section>
 <article>
 	{{content}}
 </article>
 {{^is "page"}}
-	<section id="author-detail">
-		{{#author}}
-			<a href="{{url}}">
-				{{#if profile_image}}
-					<img src="{{profile_image}}">
-				{{else}}
-					<img src="https://q.trap.jp/api/1.0/public/icon/traP">
-				{{/if}}
-			</a>
-			<div>
-				<small>この記事を書いた人</small>
-				<br>
-				<a class="name" href="{{url}}">{{name}}</a>
-				{{> author-link}}
-				<p>{{bio}}</p>
+	<section id="authors-detail">
+		{{#foreach author}}
+			<div class="author-detail">
+				<a href="{{url}}">
+					{{#if profile_image}}
+						<img src="{{profile_image}}">
+					{{else}}
+						<img src="https://q.trap.jp/api/1.0/public/icon/traP">
+					{{/if}}
+				</a>
+				<div>
+					<small>この記事を書いた人</small>
+					<br>
+					<a class="name" href="{{url}}">{{name}}</a>
+					{{> author-link}}
+					<p>{{bio}}</p>
+				</div>
 			</div>
-		{{/author}}
+		{{/foreach}}
 	</section>
 {{/is}}
 <section id="share">
@@ -84,7 +86,7 @@
 {{/post}}
 {{^is "page"}}
 	<iframe id="hyakkiyagyo" scrolling="no" src="https://sysad.trap.show/hyakkiyagyo/page/{{post.slug}}/"></iframe>
-	{{#get "posts" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,author" limit="6"}}
+	{{#get "posts" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" limit="6"}}
 		{{#if posts.length}}
 			<section id="postlist">
 				<h1>関連する記事</h1>
