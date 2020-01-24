@@ -186,10 +186,7 @@ article .kg-gallery-row .kg-gallery-image img {
 }
 
 article .kg-bookmark-card {
-	display: block;
-	margin: .4em .1em;
-	border: 3px solid #ddd;
-	border-radius: 2px;
+	margin: 0;
 }
 article .kg-bookmark-container {
 	display: flex;
@@ -274,6 +271,8 @@ article .kg-bookmark-publisher {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	color: #47D;
+	word-break: break-all;
+	white-space: normal;
 }
 
 article .kg-embed-card {
@@ -284,6 +283,10 @@ article .kg-embed-card {
 }
 article .kg-embed-card iframe {
 	max-width: 100%;
+}
+article .kg-embed-card twitter-widget {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 article .kg-code-card {
