@@ -29,7 +29,7 @@
 			{{tags separator=" "}}
 		</div>
 	</div>
-	{{#foreach author}}
+	{{#foreach authors}}
 		<div class="author">
 			<a href="{{url}}">
 				{{#if profile_image}}
@@ -48,7 +48,7 @@
 </article>
 {{^is "page"}}
 	<section id="authors-detail">
-		{{#foreach author}}
+		{{#foreach authors}}
 			<div class="author-detail">
 				<a href="{{url}}">
 					{{#if profile_image}}
