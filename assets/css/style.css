@@ -600,13 +600,19 @@ a.facebook {
 #eyecatch .tags > a:hover {
 	border-color: #fff;
 }
-#eyecatch .author {
+#eyecatch .authors {
+	width: 100%;
 	position: absolute;
 	bottom: -50px;
-	width: 100%;
-	text-align: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
 }
-#eyecatch .author a {
+#eyecatch .authors .author {
+	margin: 0 10px;
+}
+#eyecatch .authors .author a {
 	display: inline-flex;
 	flex-direction: column;
 	align-items: center;
@@ -614,10 +620,10 @@ a.facebook {
 	text-decoration: none;
 	transition: 250ms transform;
 }
-#eyecatch .author a:hover {
+#eyecatch .authors .author a:hover {
 	transform: scale(1.1);
 }
-#eyecatch .author img {
+#eyecatch .authors .author img {
 	width: 64px;
 	height: 64px;
 	border-radius: 32px;
@@ -685,12 +691,14 @@ article .orig-link > img {
 #authors-detail {
 	margin: 0 auto;
 	width: 70%;
-	display: flex;
 	padding: 1em;
 	border-radius: 2px;
 	border: 1px solid #aaa;
 }
-#authors-detail img {
+#authors-detail .author-detail {
+	display: flex;
+}
+#authors-detail .author-detail img {
 	flex: 0 0 auto;
 	width: 80px;
 	height: 80px;
@@ -698,35 +706,35 @@ article .orig-link > img {
 	border: 1px solid #ddd;
 	background-color: #fff;
 }
-#authors-detail div {
+#authors-detail .author-detail div {
 	margin-left: 1em;
 }
-#authors-detail a {
+#authors-detail .author-detail a {
 	text-decoration: none;
 }
-#authors-detail small {
+#authors-detail .author-detail small {
 	color: #999;
 	font-weight: 200;
 }
-#authors-detail .name {
+#authors-detail .author-detail .name {
 	color: #666;
 	font-weight: 200;
 	font-size: 1.8rem;
 }
-#authors-detail .link {
+#authors-detail .author-detail .link {
 	padding: 0em .2em;
 	position: relative;
 	top: -2px;
 	left: .2em;
 }
-#authors-detail p {
+#authors-detail .author-detail p {
 	margin: .5em 0;
 }
 @media (max-width: 500px) {
-	#authors-detail {
+	#authors-detail .author-detail {
 		flex-direction: column;
 	}
-	#authors-detail img {
+	#authors-detail .author-detail img {
 		margin-left: 1em;
 	}
 }
