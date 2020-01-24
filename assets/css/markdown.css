@@ -151,6 +151,10 @@ article .blog-code cite {
 /*************/
 /* KG STYLES */
 /*************/
+article .kg-card figcaption {
+	text-align: center;
+}
+
 article .kg-image-card {
 	margin: 0;
 }
@@ -159,9 +163,6 @@ article .kg-image-card img {
 	margin: .4em .1em;
 	border: 3px solid #ddd;
 	border-radius: 2px;
-}
-article .kg-image-card figcaption {
-	text-align: center;
 }
 
 article .kg-gallery-card {
@@ -193,16 +194,14 @@ article .kg-bookmark-card {
 article .kg-bookmark-container {
 	display: flex;
 	min-height: 148px;
-	color: var(--darkgrey);
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 	text-decoration: none;
 	border-radius: 3px;
 	box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
 }
 article .kg-bookmark-container:hover {
-	color: var(--darkgrey);
-	text-decoration: none;
-	box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
+	background-color: rgba(0,0,0,0.05);
+	text-decoration: underline;
+	text-decoration-color: #CCCCCC;
 }
 article .kg-bookmark-content {
 	flex-grow: 1;
@@ -213,23 +212,20 @@ article .kg-bookmark-content {
 	padding: 20px;
 }
 article .kg-bookmark-title {
-	color: color(var(--midgrey) l(-30%));
-	font-size: 1.6rem;
-	line-height: 1.5em;
+	color: #444444;
+	font-size: 1.4rem;
+	line-height: 1.4em;
 	font-weight: 600;
 	transition: color 0.2s ease-in-out;
-}
-article .kg-bookmark-container:hover .kg-bookmark-title {
-	color: var(--blue);
 }
 article .kg-bookmark-description {
 	display: -webkit-box;
 	overflow-y: hidden;
 	margin-top: 12px;
 	max-height: 48px;
-	color: color(var(--midgrey) l(-10%));
-	font-size: 1.5rem;
-	line-height: 1.5em;
+	color: #222222;
+	font-size: 1.2rem;
+	line-height: 1.2em;
 	font-weight: 400;
 
 	-webkit-line-clamp: 2;
@@ -255,8 +251,8 @@ article .kg-bookmark-metadata {
 	flex-wrap: wrap;
 	align-items: center;
 	margin-top: 14px;
-	color: color(var(--midgrey) l(-10%));
-	font-size: 1.5rem;
+	color: #444444;
+	font-size: 1.2rem;
 	font-weight: 400;
 }
 article .kg-bookmark-icon {
@@ -274,12 +270,23 @@ article .kg-bookmark-author:after {
 article .kg-bookmark-publisher {
 	overflow: hidden;
 	max-width: 240px;
-	line-height: 1.5em;
+	line-height: 1.3em;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	color: #47D;
 }
 
 article .kg-embed-card {
 	max-width: 100%;
 	text-align: center;
+	margin-left: 0;
+	margin-right: 0;
+}
+article .kg-embed-card iframe {
+	max-width: 100%;
+}
+
+article .kg-code-card {
+	margin-left: 0;
+	margin-right: 0;
 }
