@@ -151,6 +151,10 @@ article .blog-code cite {
 /*************/
 /* KG STYLES */
 /*************/
+article .kg-card figcaption {
+	text-align: center;
+}
+
 article .kg-image-card {
 	margin: 0;
 }
@@ -159,9 +163,6 @@ article .kg-image-card img {
 	margin: .4em .1em;
 	border: 3px solid #ddd;
 	border-radius: 2px;
-}
-article .kg-image-card figcaption {
-	text-align: center;
 }
 
 article .kg-gallery-card {
@@ -278,4 +279,14 @@ article .kg-bookmark-publisher {
 article .kg-embed-card {
 	max-width: 100%;
 	text-align: center;
+	margin-left: 0;
+	margin-right: 0;
+}
+article .kg-embed-card iframe {
+	max-width: 100%;
+}
+
+article .kg-code-card {
+	margin-left: 0;
+	margin-right: 0;
 }
