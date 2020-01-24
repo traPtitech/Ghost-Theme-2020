@@ -125,7 +125,7 @@
 <section id="postlist">
 	<h1>ブログへの投稿</h1>
 	<div class="articles">
-		{{#get "posts" include="author" limit="6"}}
+		{{#get "posts" include="authors" limit="6"}}
 			{{#foreach posts}}
 				{{> post-link}}
 			{{/foreach}}

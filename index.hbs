@@ -1,21 +1,21 @@
 {{!< default}}
 <section id="listhead">
 	{{#is "author"}}
-		{{#if author.profile_image}}
-			<img src="{{author.profile_image}}">
+		{{#if primary_author.profile_image}}
+			<img src="{{primary_author.profile_image}}">
 		{{else}}
 			<img src="https://q.trap.jp/api/1.0/public/icon/traP">
 		{{/if}}
 	{{/is}}
 	<div>
 		{{#is "author"}}
-			{{#author}}
+			{{#primary_author}}
 				<h1>
 					{{name}}
 					{{> author-link}}
 				</h1>
 				<p>{{bio}}</p>
-			{{/author}}
+			{{/primary_author}}
 		{{/is}}
 		{{#is "tag"}}
 			<h1>{{tag.name}}</h1>
@@ -27,7 +27,7 @@
 </section>
 <section id="postlist">
 	{{#is "author"}}
-		<h1>{{author.name}}の書いた記事</h1>
+		<h1>{{primary_author.name}}の書いた記事</h1>
 	{{/is}}
 	{{#is "tag"}}
 		<h1>{{tag.name}}に関する記事</h1>
