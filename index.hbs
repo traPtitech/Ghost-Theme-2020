@@ -1,21 +1,21 @@
 {{!< default}}
 <section id="listhead">
 	{{#is "author"}}
-		{{#if primary_author.profile_image}}
-			<img src="{{primary_author.profile_image}}">
+		{{#if author.profile_image}}
+			<img src="{{author.profile_image}}">
 		{{else}}
 			<img src="https://q.trap.jp/api/1.0/public/icon/traP">
 		{{/if}}
 	{{/is}}
 	<div>
 		{{#is "author"}}
-			{{#primary_author}}
+			{{#author}}
 				<h1>
 					{{name}}
 					{{> author-link}}
 				</h1>
 				<p>{{bio}}</p>
-			{{/primary_author}}
+			{{/author}}
 		{{/is}}
 		{{#is "tag"}}
 			<h1>{{tag.name}}</h1>
