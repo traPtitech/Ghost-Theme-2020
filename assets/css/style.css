@@ -99,14 +99,14 @@ address > a {
 	color: inherit;
 	text-decoration: none;
 }
+address .mail-footer {
+	background-color: #249967;
+}
 address .twitter-footer {
 	background-color: #1B95E0;
 }
 address .facebook-footer {
 	background-color: #3B5998;
-}
-address .youtube-footer {
-	background-color: #c00;
 }
 @media (max-width: 700px) {
 	footer {
