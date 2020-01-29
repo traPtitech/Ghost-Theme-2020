@@ -8,13 +8,13 @@ article h3 {
 }
 article h1 {
 	color: #005bac;
-	font-weight: 200;
+	font-weight: 300;
 	padding: 0 0 .3em .1em;
 	border-bottom: 1px dashed #aaa;
 }
 article h2 {
 	color: #666;
-	font-weight: 200;
+	font-weight: 300;
 	padding: .2em 0 .2em .6em;
 	border-left: 4px solid #aaa;
 }
@@ -212,7 +212,7 @@ article .kg-bookmark-title {
 	color: #444444;
 	font-size: 1.4rem;
 	line-height: 1.4em;
-	font-weight: 600;
+	font-weight: 400;
 	transition: color 0.2s ease-in-out;
 }
 article .kg-bookmark-description {

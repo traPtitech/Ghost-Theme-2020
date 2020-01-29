@@ -5,7 +5,7 @@
 	box-sizing: border-box;
 }
 html {
-	font-family: "Noto Sans Japanese";
+	font-family: "Noto Sans JP", sans-serif;
 	word-break: break-all;
 	background: repeating-linear-gradient(
 		-45deg,
@@ -44,7 +44,7 @@ ul.nav a {
 	display: block;
 	height: 100%;
 	padding: 2.3em 1em 0 1em;
-	font-weight: 200;
+	font-weight: 300;
 	color: inherit;
 	text-decoration: none;
 	transition: 250ms background-color, 250ms color;
@@ -341,7 +341,7 @@ a.facebook {
 }
 #about h2 {
 	margin: 1em auto;
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 1.8rem;
 	color: #005bac;
 }
@@ -476,7 +476,7 @@ a.facebook {
 	padding: 3em;
 }
 #error h1 {
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 3rem;
 	color: #666;
 }
@@ -500,7 +500,7 @@ a.facebook {
 }
 #listhead h1 {
 	margin: .2em 0;
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 2.5rem;
 	color: #666;
 }
@@ -716,11 +716,11 @@ article .orig-link > img {
 }
 #authors-detail .author-detail small {
 	color: #999;
-	font-weight: 200;
+	font-weight: 300;
 }
 #authors-detail .author-detail .name {
 	color: #666;
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 1.8rem;
 }
 #authors-detail .author-detail .link {
