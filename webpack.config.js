@@ -67,14 +67,9 @@ module.exports = {
 		}),
 		new PreloadWebpackPlugin({
 			chunks: "app",
-			rel: "prefetch",
+			rel: "preload",
 			include: "allAssets",
-			fileBlacklist: [/critical\.css/],
-			as(entry) {
-				if (/\.css$/.test(entry)) return 'style';
-				if (/\.(?:woff2?|[to]tf)$/.test(entry)) return 'font';
-				return 'script';
-			}
+			fileBlacklist: [/^critical\.css$/, /\.(?:eot|svg|[ot]tf|woff)$/]
 		}),
 		new FixStyleOnlyEntriesPlugin()
 	],
