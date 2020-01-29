@@ -708,6 +708,16 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@openfonts/noto-sans-jp_japanese@^1.44.0":
+  version "1.44.0"
+  resolved "https://registry.yarnpkg.com/@openfonts/noto-sans-jp_japanese/-/noto-sans-jp_japanese-1.44.0.tgz#f03da1ea06afa8c3130177c5380880ad0312615f"
+  integrity sha512-9IXx5fUAZ6pHP/oO+kYQ704yNJ9yxBX8b11d3q10Fmm7qUB6TuP1a8vbUBRc6/QE1PJ/lHuDABpJZEnsUOgr/w==
+
+"@openfonts/source-code-pro_latin@^1.44.0":
+  version "1.44.0"
+  resolved "https://registry.yarnpkg.com/@openfonts/source-code-pro_latin/-/source-code-pro_latin-1.44.0.tgz#66642f133304e99137efed33e81120889fa41f24"
+  integrity sha512-W3cXY8YCq7crtnqI2OPLIkz7ljTSUy2qgXeW9JmWDS3KYrlwBCk4yhDrOylbG80kuugT7tpCsWxG7+3k9SLnqw==
+
 "@types/q@^1.5.1":
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
@@ -4949,15 +4959,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeface-notosans-jp@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/typeface-notosans-jp/-/typeface-notosans-jp-1.0.1.tgz#acfcc0aaf0dd3ffd83e537d8db017bb4c0dc96e3"
-
-typeface-source-code-pro@^1.1.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/typeface-source-code-pro/-/typeface-source-code-pro-1.1.3.tgz#46113e0ad1729ed2a6b950bb4a77748f65bbf6ef"
-  integrity sha512-BAQ8I7Xy5zS5+KuG+gjRPNYCdfwL8vSF9jT8q9wzCRiiOG4h7id5zt8wcQx59riGRbRsgycRfs/ubyAm2z/FJQ==
 
 uglify-js@3.3.x:
   version "3.3.28"
