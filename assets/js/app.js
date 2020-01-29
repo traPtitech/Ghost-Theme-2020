@@ -1,4 +1,3 @@
-import "normalize.css";
 import "katex/dist/katex.css";
 import "highlight.js/styles/github.css";
 import "font-awesome/css/font-awesome.css";
@@ -6,7 +5,6 @@ import "font-awesome/css/font-awesome.css";
 import "typeface-notosans-jp";
 import "typeface-source-code-pro";
 
-import "../css/style.css";
 import "../css/markdown.css";
 
 // fill copyright year
