@@ -10,12 +10,12 @@
         "build": "webpack"
     },
     "dependencies": {
+        "@openfonts/noto-sans-jp_japanese": "^1.44.0",
+        "@openfonts/source-code-pro_latin": "^1.44.0",
         "font-awesome": "^4.7.0",
         "highlight.js": "^9.17.1",
         "katex": "^0.11.1",
-        "normalize.css": "^8.0.1",
-        "typeface-notosans-jp": "^1.0.1",
-        "typeface-source-code-pro": "^1.1.3"
+        "normalize.css": "^8.0.1"
     },
     "devDependencies": {
         "@babel/core": "^7.8.3",

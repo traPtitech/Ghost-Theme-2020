@@ -1,0 +1,24 @@
+/* noto-sans-jp-300normal - japanese */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src:
+    local('Noto Sans Japanese Light'),
+    local('NotoSansJapanese-Light'),
+    url('~@openfonts/noto-sans-jp_japanese/files/noto-sans-jp-japanese-300.woff2') format('woff2'),
+    url('~@openfonts/noto-sans-jp_japanese/files/noto-sans-jp-japanese-300.woff') format('woff');
+}
+/* noto-sans-jp-700normal - japanese */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src:
+    local('Noto Sans Japanese Bold'),
+    local('NotoSansJapanese-Bold'),
+    url('~@openfonts/noto-sans-jp_japanese/files/noto-sans-jp-japanese-700.woff2') format('woff2'),
+    url('~@openfonts/noto-sans-jp_japanese/files/noto-sans-jp-japanese-700.woff') format('woff');
+}

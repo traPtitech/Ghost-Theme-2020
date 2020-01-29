@@ -1,2 +1,15 @@
 @import "~normalize.css/normalize.css";
 @import "style.css";
+
+/* noto-sans-jp-400normal - japanese */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:
+    local('Noto Sans Japanese Regular'),
+    local('NotoSansJapanese-Regular'),
+    url('~@openfonts/noto-sans-jp_japanese/files/noto-sans-jp-japanese-400.woff2') format('woff2'),
+    url('~@openfonts/noto-sans-jp_japanese/files/noto-sans-jp-japanese-400.woff') format('woff');
+}
