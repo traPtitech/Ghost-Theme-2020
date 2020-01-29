@@ -20,10 +20,10 @@ window.addEventListener("message", (event) => {
 });
 
 // add link to image
-document.querySelectorAll("article p > img").forEach((img) => {
+document.querySelectorAll("article p > img, article .kg-image-card > img, article .kg-gallery-image > img").forEach((img) => {
 	const link = document.createElement("a");
 	link.target = "_blank";
-	link.href = `${img.src}?original=1`;
+	link.href = img.src;
 	link.className = "orig-link";
 	img.replaceWith(link);
 	link.appendChild(img);

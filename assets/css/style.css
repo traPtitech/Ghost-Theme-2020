@@ -655,7 +655,7 @@ article {
 	margin: 5em auto;
 	width: 80%;
 }
-article .orig-link > img {
+article p .orig-link > img, article .kg-image-card .orig-link > img {
 	display: block;
 	margin: .4em .1em;
 	border: 3px solid #ddd;
