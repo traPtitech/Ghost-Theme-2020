@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 12.x
       - name: install
-        run: yarn install
+        run: yarn install --frozen-lockfile
       - name: build
         run: npm run build
       - name: commit

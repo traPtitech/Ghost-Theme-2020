@@ -158,12 +158,6 @@ article .kg-card figcaption {
 article .kg-image-card {
 	margin: 0;
 }
-article .kg-image-card img {
-	display: block;
-	margin: .4em .1em;
-	border: 3px solid #ddd;
-	border-radius: 2px;
-}
 
 article .kg-gallery-card {
 	display: block;
