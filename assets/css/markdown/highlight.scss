@@ -1,0 +1,16 @@
+.blog-code {
+  position: relative;
+  code {
+    overflow-x: visible;
+    padding: 0;
+  }
+  cite {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 4px;
+    font-size: .8em;
+    color: #333;
+    background: #ddd;
+  }
+}
