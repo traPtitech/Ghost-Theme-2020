@@ -1,7 +1,6 @@
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faHome, faShareAlt } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faFacebookF, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import lozad from 'lozad';
 
 import { setupCarousel } from './carousel';
@@ -11,7 +10,7 @@ import { setupWebshare } from './web-share';
 
 import '../css/style.scss';
 
-library.add(faHome, faShareAlt, faEnvelope, faTwitter, faFacebookF);
+library.add(faHome, faShareAlt, faTwitter, faFacebookF, faYoutube);
 
 const onLoad = () => {
 	// prepare article imgs for lazyload
