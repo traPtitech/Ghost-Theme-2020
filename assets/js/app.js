@@ -1,6 +1,6 @@
 import "katex/dist/katex.css";
 import "highlight.js/styles/github.css";
-import "font-awesome/css/font-awesome.css";
+import "@fortawesome/fontawesome-free/css/fontawesome.css";
 
 import "../css/notosans.css";
 import "@openfonts/source-code-pro_latin";
