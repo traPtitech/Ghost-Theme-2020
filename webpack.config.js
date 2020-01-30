@@ -14,7 +14,7 @@ module.exports = {
 	mode: "production",
 	entry: {
 		app: "./assets/js/app.js",
-		critical: "./assets/css/critical.css"
+		critical: "./assets/css/critical.scss"
 	},
 	output: {
 		filename: "[name].js",
@@ -33,12 +33,26 @@ module.exports = {
 					}
 				}
 			}, {
-				test: /critical\.css$/,
-				use: [MiniCssExtractPlugin.loader, "css-loader"],
+				test: /critical\.scss$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					"css-loader",
+					{
+						loader: 'sass-loader',
+						options: { implementation: require('sass') }
+					}
+				],
 			}, {
-				test: /\.css$/,
-				exclude: /critical\.css$/,
-				use: [MiniCssExtractPlugin.loader, "css-loader"]
+				test: /\.scss$/,
+				exclude: /critical\.scss$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					"css-loader",
+					{
+						loader: 'sass-loader',
+						options: { implementation: require('sass') }
+					}
+				]
 			}, {
 				test: /\.svg$/,
 				use: ["file-loader", "svgo-loader"]

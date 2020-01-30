@@ -1,13 +1,8 @@
-import "katex/dist/katex.css";
-import "highlight.js/styles/github.css";
-import { library, dom } from "@fortawesome/fontawesome-svg-core";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
-import "../css/notosans.css";
-import "@openfonts/source-code-pro_latin";
-
-import "../css/markdown.css";
+import '../css/style.scss';
 
 // font awesome
 library.add(faHome, faTwitter, faFacebookF);
