@@ -18,7 +18,7 @@ module.exports = {
 		critical: "./assets/css/critical.scss"
 	},
 	output: {
-		filename: "[name].js",
+		filename: "[name].[chunkhash].js",
 		path: path.join(__dirname, "assets", "built"),
 		publicPath: "/assets/built/",
 	},
@@ -68,12 +68,11 @@ module.exports = {
 			chunks: "app",
 			filename: "../../default.hbs",
 			template: "default.src.hbs",
-			hash: true,
 			inject: "head"
 		}),
-		new MiniCssExtractPlugin({ filename: "[name].css" }),
-		new StyleExtHtmlWebpackPlugin("critical.css", {
-			chunks: "app",
+		new MiniCssExtractPlugin({ filename: "[name].[chunkhash].css" }),
+		new StyleExtHtmlWebpackPlugin({
+			cssRegExp: /critical\..+\.css/i,
 			minify: true
 		}),
 		new ScriptExtHtmlWebpackPlugin({
