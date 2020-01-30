@@ -23,6 +23,7 @@
         "@babel/core": "^7.8.3",
         "@babel/preset-env": "^7.8.3",
         "babel-loader": "^8.0.6",
+        "brotli-webpack-plugin": "^1.1.0",
         "css-loader": "^3.4.2",
         "cssnano-preset-advanced": "^4.0.7",
         "fibers": "^4.0.2",
