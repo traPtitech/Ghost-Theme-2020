@@ -99,7 +99,23 @@ module.exports = {
 				},
 				extractComments: "some"
 			}),
-			new OptimizeCSSAssetsPlugin({})
+			new OptimizeCSSAssetsPlugin({
+				cssProcessorPluginOptions: {
+					preset: [
+						'advanced',
+						{
+							cssDeclarationSorter : {
+								order: 'alphabetically',
+								keepOverrides: true
+							},
+							discardUnused: false,
+							mergeIdents: false,
+							reduceIdents: false,
+							zindex: false
+						}
+					],
+				}
+			})
 		]
 	}
 };
