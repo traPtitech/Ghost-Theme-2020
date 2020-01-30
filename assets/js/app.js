@@ -1,11 +1,23 @@
 import "katex/dist/katex.css";
 import "highlight.js/styles/github.css";
-import "@fortawesome/fontawesome-free/css/fontawesome.css";
+import { library, dom } from "@fortawesome/fontawesome-svg-core";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 
 import "../css/notosans.css";
 import "@openfonts/source-code-pro_latin";
 
 import "../css/markdown.css";
+
+// font awesome
+library.add(faHome, faTwitter, faFacebookF);
+if (document.readyState !== 'loading') {
+	dom.i2svg();
+} else {
+	window.addEventListener("DOMContentLoaded", () => {
+		dom.i2svg();
+	})
+}
 
 // fill copyright year
 window.addEventListener("load", () => {
