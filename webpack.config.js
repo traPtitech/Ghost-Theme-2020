@@ -9,6 +9,7 @@ const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const BrotliPlugin = require("brotli-webpack-plugin");
 
 module.exports = {
 	mode: "production",
@@ -115,6 +116,12 @@ module.exports = {
 						}
 					],
 				}
+			}),
+			new BrotliPlugin({
+				asset: "[path].br[query]",
+				test: /\.(js|css|svg)$/,
+				threshold: 1024,
+				minRatio: 0.9
 			})
 		]
 	}
