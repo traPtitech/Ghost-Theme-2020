@@ -131,6 +131,9 @@ article {
 	.fb_iframe_widget {
 		top: -3px;
 	}
+	div > * {
+		margin: 0.1rem 0;
+	}
 }
 
 #authors-detail {
