@@ -1,8 +1,12 @@
 #eyecatch {
 	position: relative;
 	height: 600px;
+	max-height: calc(100vh - #{$header-height});
 	background-size: cover;
 	background-position: center;
+	@media (max-width: 840px) {
+		max-height: calc(100vh - #{$header-sm-height});
+	}
 
 	&.noimg {
 		height: 400px;
@@ -130,6 +134,9 @@ article {
 	}
 	.fb_iframe_widget {
 		top: -3px;
+	}
+	div > * {
+		margin: 0.1rem 0;
 	}
 }
 
