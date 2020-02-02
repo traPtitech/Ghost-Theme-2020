@@ -1,7 +1,15 @@
 {{!< default}}
-<h1>全てのタグ</h1>
-{{#get "tags" limit="all"}}
-  {{#foreach tags}}
-    <li><a href="{{url}}">{{name}}</a></li>
-  {{/foreach}}
-{{/get}}
+<section id="listhead">
+	<div>
+		<h1>全てのタグ</h1>
+	</div>
+</section>
+<section id="taglist">
+	<ul>
+		{{#get "tags" limit="all"}}
+			{{#foreach tags}}
+				<li><a href="{{url}}">{{name}}</a></li>
+			{{/foreach}}
+		{{/get}}
+	</ul>
+</section>
