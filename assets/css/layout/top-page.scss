@@ -1,8 +1,13 @@
 #featured {
 	position: relative;
 	height: 600px;
+	max-height: calc(100vh - #{$header-height});
 	background-size: cover;
 	background-position: center;
+	@media (max-width: 840px) {
+		max-height: calc(100vh - #{$header-sm-height});
+	}
+
 	div {
 		position: absolute;
 		bottom: 0;
@@ -19,6 +24,9 @@
 			margin: 0;
 			@media (max-width: 1200px) {
 				padding: .5em 2em;
+			}
+			@media (max-width: 500px) {
+				padding: .5em 1em;
 			}
 		}
 		h1 {
