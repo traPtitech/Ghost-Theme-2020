@@ -1,3 +1,25 @@
 #taglist {
-  margin: 2em 0
+  margin: 2em 0;
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    li {
+      list-style: none;
+      line-height: 2.2em;
+      word-break: keep-all;
+      margin: 0.2em;
+      > a {
+        border: 1px solid #005bac;
+        border-radius: 2px;
+        padding: .1em .4em;
+        text-decoration: none;
+        transition: color .25s, background-color .25s;
+        color: #005bac;
+        &:hover {
+          background-color: #005bac;
+          color: #fff;
+        }
+      }
+    }
+  }
 }
