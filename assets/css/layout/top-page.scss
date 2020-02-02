@@ -1,8 +1,13 @@
 #featured {
 	position: relative;
 	height: 600px;
+	max-height: calc(100vh - #{$header-height});
 	background-size: cover;
 	background-position: center;
+	@media (max-width: 840px) {
+		max-height: calc(100vh - #{$header-sm-height});
+	}
+
 	div {
 		position: absolute;
 		bottom: 0;
