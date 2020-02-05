@@ -1,12 +1,12 @@
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 import '../css/style.scss';
 
 // font awesome
-library.add(faHome, faEnvelope, faTwitter, faFacebookF);
+library.add(faHome, faShareAlt, faEnvelope, faTwitter, faFacebookF);
 if (document.readyState !== 'loading') {
 	dom.i2svg();
 } else {
@@ -49,3 +49,21 @@ document.querySelectorAll("article p > img, article .kg-image-card > img, articl
 	img.replaceWith(link);
 	link.appendChild(img);
 });
+
+// web share
+const $share = document.querySelector("#web-share")
+if ($share) {
+	if (navigator.share) {
+		$share.classList.remove("disabled")
+		$share.addEventListener("click", async () => {
+			try {
+				await navigator.share({
+					title: document.title,
+					url: location.href,
+				});
+			} catch (e) {
+				console.error("failed to share", e);
+			}
+		})
+	}
+}
