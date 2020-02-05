@@ -82,9 +82,11 @@
 		{{!-- Facebook --}}
 		<div class="fb-like" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
 		<div class="fb-share-button" data-href="https://trap.jp/post/{{post.slug}}/" data-layout="button_count"></div>
+		{{!-- WebShareAPI --}}
+		<div id="web-share" class="disabled"><i class="fas fa-share-alt"></i><span>共有</span></div>
+		{{!-- Facebook (API) --}}
 		<div id="fb-root"></div>
 		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0"></script>
-		<div id="web-share" class="disabled"><i class="fas fa-share-alt"></i>共有</div>
 	</div>
 </section>
 {{/post}}

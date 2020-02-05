@@ -55,15 +55,13 @@ const $share = document.querySelector("#web-share")
 if ($share) {
 	if (navigator.share) {
 		$share.classList.remove("disabled")
-		$share.addEventListener("click", async () => {
-			try {
-				await navigator.share({
-					title: document.title,
-					url: location.href,
-				});
-			} catch (e) {
+		$share.addEventListener("click", () => {
+			navigator.share({
+				title: document.title,
+				url: location.href,
+			}).catch(e => {
 				console.error("failed to share", e);
-			}
+			})
 		})
 	}
 }
