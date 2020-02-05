@@ -6,9 +6,11 @@
 </section>
 <section id="taglist">
 	<ul>
-		{{#get "tags" limit="all"}}
+		{{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
 			{{#foreach tags}}
-				<li><a href="{{url}}">{{name}}</a></li>
+				<li class="tag" data-count="{{count.posts}}">
+					<a href="{{url}}">{{name}} ({{count.posts}})</a>
+				</li>
 			{{/foreach}}
 		{{/get}}
 	</ul>
