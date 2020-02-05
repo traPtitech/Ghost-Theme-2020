@@ -1,11 +1,12 @@
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 import '../css/style.scss';
 
 // font awesome
-library.add(faHome, faTwitter, faFacebookF);
+library.add(faHome, faEnvelope, faTwitter, faFacebookF);
 if (document.readyState !== 'loading') {
 	dom.i2svg();
 } else {

@@ -23,33 +23,9 @@
 	</header>
 	{{{body}}}
 	<section id="sitemap">
-		<div>
-			<h1>活動の紹介</h1>
-			<ul>
-				<li><a href="/about/">traPについて</a></li>
-				<li><a href="/sound/">サウンド班</a></li>
-				<li><a href="/graphics/">グラフィック班</a></li>
-				<li><a href="/program/">プログラミング班</a></li>
-			</ul>
-		</div>
-		<div>
-			<h1>カテゴリ</h1>
-			<ul>
-				<li><a href="/tag/news/">お知らせ</a></li>
-				<li><a href="/tag/works/">作品紹介</a></li>
-				<li><a href="/page/1/">ブログ記事</a></li>
-			</ul>
-		</div>
-		<div>
-			<h1>タグ</h1>
-			<ul>
-				{{#get "tags" filter="slug:[advent-calendar-2017, advent-calendar-2018, welcome-relay-2018, welcome-relay-2019, event-report]"}}
-					{{#foreach tags}}
-						<li><a href="{{url}}">{{name}}</a></li>
-					{{/foreach}}
-				{{/get}}
-			</ul>
-		</div>
+		<a href="/page/1/">記事一覧</a>
+		<a href="/tags/">タグ一覧</a>
+		<a href="/about-google-analytics/">Google アナリティクスについて</a>
 	</section>
 	<footer>
 		<div class="copy">
