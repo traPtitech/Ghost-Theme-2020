@@ -21,20 +21,24 @@ window.addEventListener("load", () => {
 });
 
 const $hyakkiyagyo = document.querySelector("#hyakkiyagyo")
-const hyakkiyagyoOrigin = "https://sysad.trap.show"
-// adjust iframe size
-window.addEventListener("message", (event) => {
-	if(event.origin === hyakkiyagyoOrigin){
-		$hyakkiyagyo.style.height = event.data + "px";
-	}
-});
-// send css path to hyakkiyagyo
-$hyakkiyagyo.addEventListener("load", () => {
-	$hyakkiyagyo.contentWindow.postMessage(
-		document.querySelector("link[rel=stylesheet][href*=\\/app]").href,
-		hyakkiyagyoOrigin
-	)
-})
+if ($hyakkiyagyo) {
+	const hyakkiyagyoOrigin = "https://sysad.trap.show"
+
+	// adjust iframe size
+	window.addEventListener("message", (event) => {
+		if(event.origin === hyakkiyagyoOrigin){
+			$hyakkiyagyo.style.height = event.data + "px";
+		}
+	});
+
+	// send css path to hyakkiyagyo
+	$hyakkiyagyo.addEventListener("load", () => {
+		$hyakkiyagyo.contentWindow.postMessage(
+			document.querySelector("link[rel=stylesheet][href*=\\/app]").href,
+			hyakkiyagyoOrigin
+		)
+	})
+}
 
 // add link to image
 document.querySelectorAll("article p > img, article .kg-image-card > img, article .kg-gallery-image > img").forEach((img) => {
