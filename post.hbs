@@ -91,7 +91,7 @@
 </section>
 {{/post}}
 {{^is "page"}}
-	<iframe id="hyakkiyagyo" scrolling="no" src="https://sysad.trap.show/hyakkiyagyo/page/{{post.slug}}/"></iframe>
+	<iframe id="hyakkiyagyo" scrolling="no" src="https://sysad.trap.show/hyakkiyagyo/page/{{post.slug}}/" loading="lazy"></iframe>
 	{{#get "posts" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" limit="6"}}
 		{{#if posts.length}}
 			<section id="postlist">
