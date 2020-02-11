@@ -1,5 +1,5 @@
 {{#if feature_image}}
-	<a href="{{url}}" class="article" style="background-image: url('{{feature_image}}')">
+	<a href="{{url}}" class="article lozad" data-background-image="{{feature_image}}">
 {{else}}
 	<a href="{{url}}" class="article noimg">
 {{/if}}
@@ -10,9 +10,9 @@
 		<div class="author">
 			{{#primary_author}}
 				{{#if profile_image}}
-					<img src="{{profile_image}}" loading="lazy">
+					<img class="lozad" data-src="{{profile_image}}">
 				{{else}}
-					<img src="https://q.trap.jp/api/1.0/public/icon/traP" loading="lazy">
+					<img class="lozad" data-src="https://q.trap.jp/api/1.0/public/icon/traP">
 				{{/if}}
 				<span>{{name}}</span>
 			{{/primary_author}}
