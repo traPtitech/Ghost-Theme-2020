@@ -11,12 +11,13 @@ library.add(faHome, faShareAlt, faEnvelope, faTwitter, faFacebookF);
 const onLoad = () => {
 	// prepare article imgs for lazyload
 	const $postHead = document.querySelector('.post-head')
-	if (!$postHead) return
-	document.querySelector('article').querySelectorAll('img[src], video[src], iframe[src]').forEach($media => {
-		$media.dataset.src = $media.src
-		$media.removeAttribute('src')
-		$media.classList.add('lozad')
-	})
+	if ($postHead) {
+		document.querySelector('article').querySelectorAll('img[src], video[src], iframe[src]').forEach($media => {
+			$media.dataset.src = $media.src
+			$media.removeAttribute('src')
+			$media.classList.add('lozad')
+		})
+	}
 
 	// lazyload
 	const observer = lozad();
