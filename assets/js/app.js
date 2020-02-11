@@ -2,12 +2,17 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faHome, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import lozad from 'lozad'
 
 import '../css/style.scss';
 
 library.add(faHome, faShareAlt, faEnvelope, faTwitter, faFacebookF);
 
 const onLoad = () => {
+	// lazyload
+	const observer = lozad();
+	observer.observe();
+
 	// font awesome
 	dom.i2svg();
 
