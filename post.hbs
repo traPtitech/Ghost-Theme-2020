@@ -92,16 +92,32 @@
 {{/post}}
 {{^is "page"}}
 	<iframe id="hyakkiyagyo" scrolling="no" src="https://sysad.trap.show/hyakkiyagyo/page/{{post.slug}}/" loading="lazy"></iframe>
-	{{#get "posts" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" limit="6"}}
-		{{#if posts.length}}
-			<section id="postlist">
-				<h1>関連する記事</h1>
-				<div class="articles">
-					{{#foreach posts}}
-						{{> post-link}}
-					{{/foreach}}
-				</div>
-			</section>
-		{{/if}}
-	{{/get}}
+	{{#if post.tags}}
+		{{#get "posts" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" limit="6"}}
+			{{#if posts.length}}
+				<section id="postlist">
+					<h1>関連する記事</h1>
+					<div class="articles">
+						{{#foreach posts}}
+							{{> post-link}}
+						{{/foreach}}
+					</div>
+				</section>
+			{{/if}}
+		{{/get}}
+	{{else}}
+		{{#get "posts" filter="authors:[{{post.authors}}]+id:-{{post.id}}" include="authors" limit="6"}}
+			{{#if posts.length}}
+				<section id="postlist">
+					<h1>関連する記事</h1>
+					<div class="articles">
+						{{#foreach posts}}
+							{{> post-link}}
+						{{/foreach}}
+					</div>
+				</section>
+			{{/if}}
+		{{/get}}
+	{{/if}}
+
 {{/is}}
