@@ -106,7 +106,7 @@
 			{{/if}}
 		{{/get}}
 	{{else}}
-		{{#get "posts" filter="authors:[{{post.primary_author}}]+id:-{{post.id}}" include="authors" limit="6"}}
+		{{#get "posts" filter="authors:{{post.primary_author.id}}+id:-{{post.id}}" include="authors" limit="6"}}
 			{{#if posts.length}}
 				<section id="postlist">
 					<h1>関連する記事</h1>
