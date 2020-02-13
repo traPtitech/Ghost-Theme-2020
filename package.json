@@ -16,6 +16,7 @@
         "@fortawesome/free-solid-svg-icons": "^5.12.1",
         "@openfonts/noto-sans-jp_japanese": "^1.44.0",
         "@openfonts/source-code-pro_latin": "^1.44.0",
+        "core-js": "^3.6.4",
         "highlight.js": "^9.18.1",
         "katex": "^0.11.1",
         "lozad": "^1.14.0",

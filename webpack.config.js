@@ -1,4 +1,4 @@
-const path = require("path");
+const { join, resolve } = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -19,7 +19,7 @@ module.exports = {
 	},
 	output: {
 		filename: "[name].[chunkhash].js",
-		path: path.join(__dirname, "assets", "built"),
+		path: join(__dirname, "assets", "built"),
 		publicPath: "/assets/built/",
 	},
 	module: {
@@ -30,7 +30,7 @@ module.exports = {
 				use: {
 					loader: "babel-loader",
 					options: {
-						presets: ["@babel/preset-env"]
+						configFile: resolve("babel.config.json")
 					}
 				}
 			}, {
