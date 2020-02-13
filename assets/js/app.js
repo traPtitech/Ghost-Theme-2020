@@ -2,7 +2,8 @@ import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faHome, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
-import lozad from 'lozad'
+import lozad from 'lozad';
+import Swiper from 'swiper';
 
 import '../css/style.scss';
 
@@ -25,6 +26,26 @@ const onLoad = () => {
 
 	// font awesome
 	dom.i2svg();
+
+	// top page carousel
+	const $featured = document.querySelector('#featured')
+	if ($featured) {
+		swiper = new Swiper($featured, {
+			loop: true,
+			slidesPerView: 2,
+			spaceBetween: 10,
+			centeredSlides : true,
+			pagination: '.swiper-pagination',
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			breakpoints: {
+				600: {
+					slidesPerView: 1,
+					spaceBetween: 0
+				}
+			}
+		})
+	}
 
 	// fill copyright year
 	document.querySelector(".copy span").textContent = new Date().getFullYear();
