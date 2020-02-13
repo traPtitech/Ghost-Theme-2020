@@ -8,14 +8,18 @@
 		<br>
 		<strong>{{title}}</strong>
 		<div class="author">
-			{{#primary_author}}
-				{{#if profile_image}}
-					<img class="lozad" data-src="{{profile_image}}">
+			{{#foreach author limit="2"}}
+				{{#if @first}}
+					{{#if profile_image}}
+						<img class="lozad" data-src="{{profile_image}}">
+					{{else}}
+						<img class="lozad" data-src="https://q.trap.jp/api/1.0/public/icon/traP">
+					{{/if}}
+					<span>{{name}}</span>
 				{{else}}
-					<img class="lozad" data-src="https://q.trap.jp/api/1.0/public/icon/traP">
+					<span> + 他</span>
 				{{/if}}
-				<span>{{name}}</span>
-			{{/primary_author}}
+			{{/foreach}}
 		</div>
 	</div>
 </a>
