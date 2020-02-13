@@ -6,11 +6,11 @@
 					<div class="swiper-slide">
 						<a href="{{url}}">
 							{{#if feature_image}}
-								{{#unless @index }}
+								{{#if @first }}
 								<img src="{{feature_image}}">
 								{{else}}
 								<img class="lozad" data-src="{{feature_image}}">
-								{{/unless}}
+								{{/if}}
 							{{else}}
 								<img class="noimg lozad" data-src="{{asset "logo/icon_blue.svg"}}">
 							{{/if}}
