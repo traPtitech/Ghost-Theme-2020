@@ -51,6 +51,9 @@ const onLoad = () => {
 				clickable: true
 			},
 			on: {
+				init() {
+					observer.observe()
+				},
 				slideChange() {
 					observer.observe()
 				}
