@@ -14,10 +14,6 @@
 		padding: 0;
 		background-size: cover;
 		background-position: center;
-		transition: 250ms opacity;
-		&:hover {
-			opacity: .5;
-		}
 
 		> img {
 			object-fit: cover;
@@ -39,16 +35,11 @@
 			overflow-wrap: break-word;
 			word-break: break-word;
 			transition: 250ms padding, 250ms background-color;
-			&:hover {
-				padding: 2em 0;
-				background-color: rgba(0, 0, 0, .75);
-			}
 
 			h1 {
 				margin: 0;
 				padding: 2em;
 				padding-top: 1em;
-				background-color: rgba(0, 91, 172, .8);
 				font-size: 2rem;
 				text-align: center;
 			}
@@ -57,6 +48,12 @@
 				padding: 0.5em;
 				font-size: 1.5rem;
 				text-align: right;
+			}
+		}
+		&:hover {
+			> div {
+				padding: 2em 0;
+				background-color: rgba(0, 0, 0, .75);
 			}
 		}
 	}

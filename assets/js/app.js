@@ -30,7 +30,7 @@ const onLoad = () => {
 	// top page carousel
 	const $featured = document.querySelector('#featured')
 	if ($featured) {
-		const swiper = new Swiper($featured, {
+		new Swiper($featured, {
 			loop: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
@@ -49,6 +49,11 @@ const onLoad = () => {
 				el: '.swiper-pagination',
 				type: 'bullets',
 				clickable: true
+			},
+			on: {
+				slideChange() {
+					observer.observe()
+				}
 			}
 		})
 	}
