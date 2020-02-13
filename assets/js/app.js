@@ -32,16 +32,16 @@ const onLoad = () => {
 	if ($featured) {
 		const swiper = new Swiper($featured, {
 			loop: true,
-			slidesPerView: 2,
-			spaceBetween: 10,
+			slidesPerView: 1,
+			spaceBetween: 0,
 			centeredSlides : true,
 			pagination: '.swiper-pagination',
 			nextButton: '.swiper-button-next',
 			prevButton: '.swiper-button-prev',
 			breakpoints: {
 				600: {
-					slidesPerView: 1,
-					spaceBetween: 0
+					slidesPerView: 2,
+					spaceBetween: 10,
 				}
 			}
 		})
