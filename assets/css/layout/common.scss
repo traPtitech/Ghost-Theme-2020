@@ -123,7 +123,8 @@ address {
 		flex: 1 0 auto;
 		position: relative;
 		margin: 1px 0 0 1px;
-		height: 360px;
+		height: 50vh;
+		max-height: 20em;
 		background-size: cover;
 		background-position: center;
 		color: inherit;
