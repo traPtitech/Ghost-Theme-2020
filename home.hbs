@@ -1,13 +1,29 @@
 {{!< default}}
-{{#get "posts" filter="page:[true,false]+featured:true" limit="1"}}
-	{{#foreach posts}}
-		<section id="featured" style="background-image: url('{{feature_image}}')">
-			<div>
-				<h1>{{title}}</h1>
-				<a href="{{url}}">READ MORE</a>
-			</div>
-		</section>
-	{{/foreach}}
+{{#get "posts" filter="tag:news" limit="6"}}
+	<section id="featured">
+		<div class="swiper-wrapper">
+				{{#foreach posts}}
+					<div class="swiper-slide">
+						{{#if feature_image}}
+							{{#unless @index }}
+							<a href="{{url}}" class="headline-entry" style="background-image: url('{{feature_image}}')">
+							{{else}}
+							<a href="{{url}}" class="headline-entry lozad" data-background-image="{{feature_image}}">
+							{{/unless}}
+						{{else}}
+							<a href="{{url}}" class="headline-entry lozad" data-background-image="{{asset "logo/icon_blue.svg"}}">
+						{{/if}}
+								<h1>{{title}}</h1>
+								<small>{{date published_at format="YYYY年M月D日"}}</small>
+							</a>
+					</div>
+				{{/foreach}}
+		</div>
+		<div class="swiper-pagination"></div>
+
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	</section>
 {{/get}}
 <section id="about">
 	<h1>traPについて</h1>
