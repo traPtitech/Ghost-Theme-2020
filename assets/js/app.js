@@ -38,16 +38,17 @@ const onLoad = () => {
 			breakpoints: {
 				840: {
 					slidesPerView: 2,
-					spaceBetween: 10,
+					spaceBetween: 10
 				}
 			},
 			navigation: {
 				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev',
+				prevEl: '.swiper-button-prev'
 			},
 			pagination: {
 				el: '.swiper-pagination',
 				type: 'bullets',
+				clickable: true
 			}
 		})
 	}

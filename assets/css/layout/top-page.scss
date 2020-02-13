@@ -20,6 +20,9 @@
 		}
 
 		> img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
 			&.noimg {
 				opacity: .3;
 			}
@@ -31,12 +34,20 @@
 			padding: 0;
 			bottom: 0;
 			color: #fff;
-			background-color: rgba(0,91,172,.8);
+			background-color: rgba(0, 91, 172, .75);
 			width: 100%;
+			overflow-wrap: break-word;
+			word-break: break-word;
+			transition: 250ms padding, 250ms background-color;
+			&:hover {
+				padding: 2em 0;
+				background-color: rgba(0, 0, 0, .75);
+			}
 
 			h1 {
 				margin: 0;
-				padding: 1em 2em;
+				padding: 2em;
+				padding-top: 1em;
 				background-color: rgba(0, 91, 172, .8);
 				font-size: 2rem;
 				text-align: center;
