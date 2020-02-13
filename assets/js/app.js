@@ -35,14 +35,19 @@ const onLoad = () => {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			centeredSlides : true,
-			pagination: '.swiper-pagination',
-			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev',
 			breakpoints: {
-				600: {
+				840: {
 					slidesPerView: 2,
 					spaceBetween: 10,
 				}
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'bullets',
 			}
 		})
 	}
