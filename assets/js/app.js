@@ -30,7 +30,7 @@ const onLoad = () => {
 	// top page carousel
 	const $featured = document.querySelector('#featured')
 	if ($featured) {
-		swiper = new Swiper($featured, {
+		const swiper = new Swiper($featured, {
 			loop: true,
 			slidesPerView: 2,
 			spaceBetween: 10,

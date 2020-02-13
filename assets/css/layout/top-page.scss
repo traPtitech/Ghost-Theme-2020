@@ -1,47 +1,61 @@
 #featured {
-	position: relative;
 	height: 600px;
 	max-height: calc(100vh - #{$header-height});
-	background-size: cover;
-	background-position: center;
 	@media (max-width: 840px) {
 		max-height: calc(100vh - #{$header-sm-height});
 	}
 
-	div {
-		position: absolute;
-		bottom: 0;
+	.swiper-slide > a {
+		display: block;
+		position: relative;
+		height: 100%;
 		width: 100%;
-		display: flex;
-		color: #fff;
-		@media (max-width: 1200px) {
-			flex-direction: column;
+		margin: 0;
+		padding: 0;
+		background-size: cover;
+		background-position: center;
+		&.noimg {
+			/* something */
 		}
 
-		> * {
-			padding: 1em 2em;
-			font-size: 2rem;
+		> div {
+			position: absolute;
+			display: flex;
 			margin: 0;
+			padding: 0;
+			bottom: 0;
+			color: #fff;
+			background-color: rgba(0,91,172,.8);
+			width: 100%;
 			@media (max-width: 1200px) {
-				padding: .5em 2em;
+				flex-direction: column;
 			}
-			@media (max-width: 500px) {
-				padding: .5em 1em;
+
+			h1, a {
+				padding: 1em 2em;
+				font-size: 2rem;
+				margin: 0;
+				@media (max-width: 1200px) {
+					padding: .5em 2em;
+				}
+				@media (max-width: 500px) {
+					padding: .5em 1em;
+				}
 			}
-		}
-		h1 {
-			flex: 1 0 auto;
-			background-color: rgba(0, 91, 172, .8);
-		}
-		a {
-			text-align: right;
-			background-color: rgba(0, 0, 0, .8);
-			transition: 250ms background-color;
-			color: inherit;
-			text-decoration: none;
-			word-break: keep-all;
-			&:hover {
-				background-color: rgba(0, 0, 0, 1);
+			h1 {
+				flex: 1 0 auto;
+				background-color: rgba(0, 91, 172, .8);
+			}
+			a {
+				text-align: right;
+				background-color: rgba(0, 0, 0, .8);
+				transition: 250ms background-color;
+				color: inherit;
+				text-decoration: none;
+				word-break: keep-all;
+				&:hover {
+					background-color: rgba(0, 0, 0, 1);
+				}
 			}
 		}
 	}

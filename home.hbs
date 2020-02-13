@@ -6,15 +6,17 @@
 					<div class="swiper-slide">
 						{{#if feature_image}}
 							{{#unless @index }}
-							<a href="{{url}}" class="headline-entry" style="background-image: url('{{feature_image}}')">
+							<a href="{{url}}" style="background-image: url('{{feature_image}}')">
 							{{else}}
-							<a href="{{url}}" class="headline-entry lozad" data-background-image="{{feature_image}}">
+							<a href="{{url}}" class="lozad" data-background-image="{{feature_image}}">
 							{{/unless}}
 						{{else}}
-							<a href="{{url}}" class="headline-entry lozad" data-background-image="{{asset "logo/icon_blue.svg"}}">
+							<a href="{{url}}" class="noimg lozad" data-background-image="{{asset "logo/icon_blue.svg"}}">
 						{{/if}}
-								<h1>{{title}}</h1>
-								<small>{{date published_at format="YYYY年M月D日"}}</small>
+								<div>
+									<h1>{{title}}</h1>
+									<small>{{date published_at format="YYYY年M月D日"}}</small>
+								</div>
 							</a>
 					</div>
 				{{/foreach}}
