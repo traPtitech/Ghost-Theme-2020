@@ -111,7 +111,7 @@ module.exports = {
 			chunks: "app",
 			rel: "preload",
 			include: "allAssets",
-			fileBlacklist: [/^critical\..+\.css$/, /\.(?:eot|svg|[ot]tf|woff)$/]
+			fileBlacklist: [/^critical\..+\.css$/, /^(?=.*(?:KaTeX|source-code-pro)).*$|\.(?:eot|svg|[ot]tf|woff)$/]
 		}),
 		new FixStyleOnlyEntriesPlugin()
 	],
