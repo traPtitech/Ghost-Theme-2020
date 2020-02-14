@@ -25,7 +25,7 @@
 			}
 		}
 
-		> div {
+		> .title {
 			position: absolute;
 			margin: 0;
 			padding: 0;
@@ -59,7 +59,7 @@
 			}
 		}
 		&:hover {
-			> div {
+			> .title {
 				padding: 2em 0;
 				background-color: rgba(0, 0, 0, .75);
 				@media (max-width: 840px) {
