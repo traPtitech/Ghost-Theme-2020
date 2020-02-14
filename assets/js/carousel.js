@@ -1,8 +1,11 @@
-import Swiper from 'swiper';
+import { Swiper, Navigation, Pagination, Lazy} from "swiper/js/swiper.esm.js";
 
 export const setupCarousel = () => {
 	const $featured = document.querySelector('#featured')
 	if (!$featured) return;
+
+	Swiper.use([Navigation, Pagination, Lazy]);
+
 	return new Swiper($featured, {
 		loop: true,
 		slidesPerView: 1,
