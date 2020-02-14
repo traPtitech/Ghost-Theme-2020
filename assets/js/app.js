@@ -3,7 +3,11 @@ import { faHome, faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import lozad from 'lozad';
-import Swiper from 'swiper';
+
+import { setupCarousel } from './carousel';
+import { setupHyakkiyagyo } from './hyakkiyagyo';
+import { addLinkToImage } from './add-link-to-image';
+import { setupWebshare } from './web-share';
 
 import '../css/style.scss';
 
@@ -28,87 +32,16 @@ const onLoad = () => {
 	dom.i2svg();
 
 	// top page carousel
-	const $featured = document.querySelector('#featured')
-	if ($featured) {
-		new Swiper($featured, {
-			loop: true,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			centeredSlides : true,
-			breakpoints: {
-				840: {
-					slidesPerView: 2,
-					spaceBetween: 10
-				}
-			},
-			navigation: {
-				nextEl: '.swiper-button-next',
-				prevEl: '.swiper-button-prev'
-			},
-			pagination: {
-				el: '.swiper-pagination',
-				type: 'bullets',
-				clickable: true
-			},
-			on: {
-				init() {
-					observer.observe()
-				},
-				slideChange() {
-					observer.observe()
-				}
-			}
-		})
-	}
+	setupCarousel(observer);
+
+	setupHyakkiyagyo();
+
+	addLinkToImage();
+
+	setupWebshare();
 
 	// fill copyright year
 	document.querySelector(".copy span").textContent = new Date().getFullYear();
-
-	const $hyakkiyagyo = document.querySelector("#hyakkiyagyo")
-	if ($hyakkiyagyo) {
-		const hyakkiyagyoOrigin = "https://sysad.trap.show"
-
-		// adjust iframe size
-		window.addEventListener("message", (event) => {
-			if(event.origin === hyakkiyagyoOrigin){
-				$hyakkiyagyo.style.height = event.data + "px";
-			}
-		});
-
-		// send css path to hyakkiyagyo
-		$hyakkiyagyo.addEventListener("load", () => {
-			$hyakkiyagyo.contentWindow.postMessage(
-				document.querySelector("link[rel=stylesheet][href*=\\/app]").href,
-				hyakkiyagyoOrigin
-			)
-		})
-	}
-
-	// add link to image
-	document.querySelectorAll("article p > img, article .kg-image-card > img, article .kg-gallery-image > img").forEach($img => {
-		const $link = document.createElement("a");
-		$link.target = "_blank";
-		$link.href = $img.src || $img.dataset.src;
-		$link.className = "orig-link";
-		$img.replaceWith($link);
-		$link.appendChild($img);
-	});
-
-	// web share
-	const $share = document.querySelector("#web-share")
-	if ($share) {
-		if (navigator.share) {
-			$share.classList.remove("disabled")
-			$share.addEventListener("click", () => {
-				navigator.share({
-					title: document.title,
-					url: location.href,
-				}).catch(e => {
-					console.error("failed to share", e);
-				})
-			})
-		}
-	}
 }
 
 if (document.readyState !== 'loading') {
