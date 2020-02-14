@@ -32,7 +32,7 @@ const onLoad = () => {
 	dom.i2svg();
 
 	// top page carousel
-	setupCarousel(observer);
+	setupCarousel();
 
 	setupHyakkiyagyo();
 

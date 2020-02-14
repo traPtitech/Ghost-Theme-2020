@@ -9,10 +9,12 @@
 								{{#if @first }}
 								<img src="{{feature_image}}" decoding="async">
 								{{else}}
-								<img class="lozad" data-src="{{feature_image}}">
+								<img data-src="{{feature_image}}" class="swiper-lazy">
+								<div class="swiper-lazy-preloader"></div>
 								{{/if}}
 							{{else}}
-								<img class="noimg lozad" data-src="{{asset "logo/icon_blue.svg"}}">
+								<img data-src="{{asset "logo/icon_blue.svg"}}" class="swiper-lazy">
+								<div class="swiper-lazy-preloader"></div>
 							{{/if}}
 							<div>
 								<p>{{date published_at format="YYYY年M月D日"}}</p>
