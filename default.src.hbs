@@ -11,13 +11,16 @@
 			{{meta_title}}
 		{{/is}}
 	</title>
-	<link rel="preconnect dns-prefetch" href="https://q.trap.jp/">
+	<link rel="preconnect dns-prefetch" href="https://q.trap.jp/" crossorigin>
+	{{#is "home"}}
+		<link rel="preconnect dns-prefetch" href="https://platform.twitter.com" crossorigin>
+	{{/is}}
 	{{ghost_head}}
 </head>
 <body>
 	<header>
 		<a class="circleLogo" href="/">
-			<img src="{{asset "logo/full_blue.svg"}}">
+			<img src="{{asset "logo/full_blue.svg"}}" decoding="async">
 		</a>
 		{{navigation}}
 	</header>

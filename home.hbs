@@ -7,7 +7,7 @@
 						<a href="{{url}}">
 							{{#if feature_image}}
 								{{#if @first }}
-								<img src="{{feature_image}}">
+								<img src="{{feature_image}}" decoding="async">
 								{{else}}
 								<img class="lozad" data-src="{{feature_image}}">
 								{{/if}}
