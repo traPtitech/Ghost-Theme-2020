@@ -5,6 +5,7 @@ import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import lozad from 'lozad';
 
 import { setupCarousel } from './carousel';
+import { loadSourceCodePro } from './load-source-code-pro';
 import { setupHyakkiyagyo } from './hyakkiyagyo';
 import { addLinkToImage } from './add-link-to-image';
 import { setupWebshare } from './web-share';
@@ -33,6 +34,9 @@ const onLoad = () => {
 
 	// top page carousel
 	setupCarousel();
+
+	// load source-code-pro font
+	loadSourceCodePro();
 
 	setupHyakkiyagyo();
 

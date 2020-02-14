@@ -1,4 +1,6 @@
 const { join, resolve } = require("path");
+const { readdirSync } = require('fs');
+const md5File = require('md5-file');
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -6,10 +8,23 @@ const StyleExtHtmlWebpackPlugin = require("style-ext-html-webpack-plugin");
 const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const CopyPlugin = require('copy-webpack-plugin');
+const { DefinePlugin } = require('webpack');
 
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const BrotliPlugin = require("brotli-webpack-plugin");
+
+// generate source-code-pro-hash
+const sourceCodeProHash = (() => {
+	const dir = 'node_modules/@openfonts/source-code-pro_latin/files'
+	const files = readdirSync(dir)
+	return Object.fromEntries(files.map(
+		file => [file, '"' + md5File.sync(`${dir}/${file}`).slice(0, 7) + '"']
+	))
+})();
+// ---
+
 
 module.exports = {
 	mode: "production",
@@ -59,11 +74,24 @@ module.exports = {
 				use: ["file-loader", "svgo-loader"]
 			}, {
 				test: /\.(eot|ttf|otf|woff2?)$/,
-				use: "file-loader",
+				loader: "file-loader",
+				options: {
+					name: '[name].[contenthash:7].[ext]',
+				},
 			}
 		],
 	},
 	plugins: [
+		new DefinePlugin({
+			'webpackDefined.sourceCodeProHash': sourceCodeProHash
+		}),
+		new CopyPlugin([
+			{
+				from: 'node_modules/@openfonts/source-code-pro_latin/files',
+				to: './fonts/[name].[contenthash:7].[ext]',
+        toType: 'template'
+			},
+		]),
 		new HtmlWebpackPlugin({
 			chunks: "app",
 			filename: "../../default.hbs",
