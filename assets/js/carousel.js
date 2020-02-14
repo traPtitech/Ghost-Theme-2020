@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 
-export const setupCarousel = observer => {
+export const setupCarousel = () => {
 	const $featured = document.querySelector('#featured')
 	if (!$featured) return;
 	return new Swiper($featured, {
@@ -11,7 +11,9 @@ export const setupCarousel = observer => {
 		breakpoints: {
 			840: {
 				slidesPerView: 2,
-				spaceBetween: 10
+				spaceBetween: 10,
+				watchSlidesProgress: true,
+				watchSlidesVisibility: true
 			}
 		},
 		navigation: {
@@ -23,13 +25,8 @@ export const setupCarousel = observer => {
 			type: 'bullets',
 			clickable: true
 		},
-		on: {
-			init() {
-				observer.observe()
-			},
-			slideChange() {
-				observer.observe()
-			}
+		lazy: {
+			loadOnTransitionStart: true
 		}
 	});
 };

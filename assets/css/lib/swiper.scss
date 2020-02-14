@@ -1,1 +1,26 @@
-@import '~swiper/css/swiper.min.css';
+// See '~swiper/swiper.scss'
+
+@import "~swiper/scss/functions";
+
+$themeColor: #007aff !default;
+$colors: ('white': #ffffff, 'black': #000000) !default;
+
+@import "~swiper/components/core/core";
+@import "~swiper/components/lazy/lazy";
+@import "~swiper/components/navigation/navigation";
+@import "~swiper/components/pagination/pagination";
+
+/* fontを使用しない代わりに以下の設定を利用 */
+.swiper-button-prev, .swiper-button-next {
+  &::after {
+    font-family: inherit !important;
+    transform: scaleY(2.5) !important;
+    font-weight: 300;
+  }
+}
+.swiper-button-prev::after {
+  content: '<' !important;
+}
+.swiper-button-next::after {
+  content: '>' !important;
+}
