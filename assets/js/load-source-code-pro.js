@@ -12,6 +12,7 @@ const loadFont = (name, src, style, weight) => {
 
 export const loadSourceCodePro = () => {
   const $article = document.querySelector('article');
+  if (!$article) return;
   const $code = $article.querySelector('code');
   if (!$code) return;
 
@@ -28,8 +29,8 @@ export const loadSourceCodePro = () => {
     return loadFont(
       'Source Code Pro',
       `
-      url('/assets/built/fonts/${bashFileName}.${hash2}.woff2') format('woff2'),
-      url('/assets/built/fonts/${bashFileName}.${hash}.woff') format('woff')
+      url('/assets/built/fonts/${baseFileName}.${hash2}.woff2') format('woff2'),
+      url('/assets/built/fonts/${baseFileName}.${hash}.woff') format('woff')
       `,
       style,
       weightNumber

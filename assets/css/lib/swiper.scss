@@ -14,7 +14,7 @@ $colors: ('white': #ffffff, 'black': #000000) !default;
 .swiper-button-prev, .swiper-button-next {
   &::after {
     font-family: inherit !important;
-    transform: scaleY(2.5) !important;
+    transform: scaleY(2.5);
     font-weight: 300;
   }
 }
