@@ -149,7 +149,9 @@ article {
 			padding: .2em;
 			background-color: #aaa;
 			border-radius: .2em;
-			font-size: 0.75em;
+			font-size: .8em;
+			height: 28px;
+			padding: 0.4em;
 			&.disabled {
 				display: none;
 			}
