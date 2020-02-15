@@ -1,12 +1,10 @@
-{{#foreach posts}}
-  <a href="{{url}}" class="product">
-    {{#if feature_image}}
-      <img class="lozad" data-src="{{feature_image}}">
-    {{else}}
-      <img class="lozad" data-src="{{asset "logo/icon_blue.svg"}}">
-    {{/if}}
-    <div class="title">
-      <h3>{{ title }}</h3>
-    </div>
-  </a>
-{{/foreach}}
+<a href="{{url}}" class="product">
+  {{#if feature_image}}
+    <img class="lozad" data-src="{{feature_image}}">
+  {{else}}
+    <img class="lozad" data-src="{{asset "logo/icon_blue.svg"}}">
+  {{/if}}
+  <div class="title">
+    <h3>{{ title }}</h3>
+  </div>
+</a>
