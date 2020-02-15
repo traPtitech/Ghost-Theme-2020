@@ -1,8 +1,11 @@
+@import 'lib/normalize';
+
 @import 'lib/katex';
 @import 'lib/highlight';
 
 @import 'font/notosans';
 @import 'font/source-code-pro';
 
+@import 'layout';
 @import 'markdown';
 @import 'article';
