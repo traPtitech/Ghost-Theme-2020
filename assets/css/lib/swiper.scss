@@ -10,6 +10,10 @@ $colors: ('white': #ffffff, 'black': #000000) !default;
 @import "~swiper/components/navigation/navigation";
 @import "~swiper/components/pagination/pagination";
 
+:root {
+  --swiper-preloader-color: white;
+}
+
 /* fontを使用しない代わりに以下の設定を利用 */
 .swiper-button-prev, .swiper-button-next {
   &::after {
