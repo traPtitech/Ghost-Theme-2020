@@ -126,5 +126,8 @@ module.exports = {
 				minRatio: 0.9
 			})
 		]
+	},
+	node: {
+		setImmediate: false
 	}
 };
