@@ -59,7 +59,10 @@ module.exports = {
 				use: ["file-loader", "svgo-loader"]
 			}, {
 				test: /\.(eot|ttf|otf|woff2?)$/,
-				use: "file-loader",
+				loader: "file-loader",
+				options: {
+					name: '[name].[contenthash:7].[ext]'
+				}
 			}
 		],
 	},
