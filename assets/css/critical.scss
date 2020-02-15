@@ -1,4 +1,6 @@
-@import 'lib/normalize';
-@import 'layout';
 @import 'font/notosans-400';
 @import 'lib/swiper';
+
+@import 'critical/variables';
+@import 'critical/page';
+@import 'critical/header';
