@@ -1,6 +1,8 @@
 #about {
 	text-align: center;
 	padding: 2em 5%;
+	word-break: keep-all;
+	overflow-wrap: break-word;
 	h1 {
 		font-weight: 400;
 		font-size: 1.4rem;
