@@ -7,9 +7,9 @@
 						<a href="{{url}}">
 							{{#if feature_image}}
 								{{#if @first }}
-								<img src="{{feature_image}}" decoding="async">
+								<img src="{{feature_image}}?width=640" decoding="async">
 								{{else}}
-								<img data-src="{{feature_image}}" class="swiper-lazy">
+								<img data-src="{{feature_image}}?width=640" class="swiper-lazy">
 								<div class="swiper-lazy-preloader"></div>
 								{{/if}}
 							{{else}}
