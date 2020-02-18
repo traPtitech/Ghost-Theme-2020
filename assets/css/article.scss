@@ -43,6 +43,7 @@ article {
 		}
 	}
 	.kg-bookmark-content {
+		max-width: 67%;
 		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
@@ -51,7 +52,6 @@ article {
 		padding: 20px;
 		@media (max-width: 600px) {
 			padding: 15px;
-			max-width: 67%;
 		}
 	}
 	.kg-bookmark-title {
