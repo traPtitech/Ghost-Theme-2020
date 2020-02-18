@@ -4,7 +4,7 @@ export const addLinkToImage = () => {
 	).forEach($img => {
 		const $link = document.createElement("a");
 		$link.target = "_blank";
-		$link.href = `${$img.src || $img.dataset.src}?original=true`;
+		$link.href = `${$img.src || $img.dataset.src}?original=1`;
 		$link.className = "orig-link";
 		$img.replaceWith($link);
 		$link.appendChild($img);
