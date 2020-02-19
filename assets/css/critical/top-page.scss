@@ -16,7 +16,7 @@
 		background-size: cover;
 		background-position: center;
 
-		> img {
+		> img, > picture {
 			object-fit: cover;
 			height: 100%;
 			width: 100%;
