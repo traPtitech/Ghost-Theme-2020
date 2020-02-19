@@ -7,7 +7,10 @@
 						<a href="{{url}}">
 							{{#if feature_image}}
 								{{#if @first }}
-								<img src="{{feature_image}}?width=640" decoding="async">
+								<picture>
+									<source srcset="{{feature_image}}.webp?webp=1&width=640" type="image/webp">
+									<img src="{{feature_image}}?width=640" decoding="async">
+								</picture>
 								{{else}}
 								<img data-src="{{feature_image}}?width=640" class="swiper-lazy">
 								<div class="swiper-lazy-preloader"></div>
@@ -108,7 +111,10 @@
 				{{#foreach posts}}
 					<a href="{{url}}" class="headline-entry">
 					{{#if feature_image}}
-						<img class="lozad" data-src="{{feature_image}}">
+						<picture class="lozad">
+							<source srcset="{{feature_image}}.webp?webp=1&width=320" type="image/webp">
+							<source srcset="{{feature_image}}?width=320">
+						</picture>
 					{{else}}
 						<img class="lozad" data-src="{{asset "logo/icon_blue.svg"}}">
 					{{/if}}

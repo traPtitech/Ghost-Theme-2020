@@ -4,7 +4,10 @@
 <a href="{{url}}" class="article noimg">
 {{/if}}
 	{{#if feature_image}}
-		<img class="lozad background" data-src="{{feature_image}}?width=320">
+		<picture class="lozad background">
+			<source srcset="{{feature_image}}.webp?webp=1&width=320" type="image/webp">
+			<source srcset="{{feature_image}}?width=320">
+		</picture>
 	{{else}}
 		<img class="lozad background" data-src="{{asset "logo/icon_white.svg"}}">
 	{{/if}}
