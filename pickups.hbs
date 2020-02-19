@@ -1,7 +1,10 @@
 {{#foreach posts}}
   <a href="{{url}}" class="product">
     {{#if feature_image}}
-      <img class="lozad" data-src="{{feature_image}}?width=320">
+      <picture class="lozad">
+        <source srcset="{{feature_image}}.webp?webp=1&width=320" type="image/webp">
+        <source srcset="{{feature_image}}?width=320">
+      </picture>
     {{else}}
       <img class="lozad" data-src="{{asset "logo/icon_blue.svg"}}">
     {{/if}}
