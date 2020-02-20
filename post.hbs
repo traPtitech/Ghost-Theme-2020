@@ -5,6 +5,7 @@
 {{else}}
 	<section id="eyecatch" class="noimg">
 {{/if}}
+<div class="wrap">
 {{#is "page"}}
 	<div class="post-head page-head">
 		<h1>{{title}}</h1>
@@ -29,8 +30,8 @@
 			{{tags separator=" "}}
 		</div>
 	</div>
-	<div class="authors">
-	{{#foreach authors}}
+	<div class="main-authors">
+	{{#foreach authors limit="3"}}
 		<div class="author">
 			<a href="{{url}}">
 				{{#if profile_image}}
@@ -44,6 +45,20 @@
 	{{/foreach}}
 	</div>
 {{/is}}
+</div>
+<div class="sub-authors">
+	{{#foreach authors from="4"}}
+		<div class="author">
+			<a href="{{url}}">
+				{{#if profile_image}}
+					<img src="{{profile_image}}" decoding="async">
+				{{else}}
+					<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async">
+				{{/if}}
+			</a>
+		</div>
+	{{/foreach}}
+</div>
 </section>
 <article>
 	{{content}}
