@@ -52,6 +52,8 @@ article {
 			font-size: .8em;
 			height: 28px;
 			padding: 0.4em;
+			user-select: none;
+			cursor: pointer;
 			&.disabled {
 				display: none;
 			}
