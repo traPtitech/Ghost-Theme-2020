@@ -1,11 +1,11 @@
 {{!< default}}
 {{#post}}
+<section id="eyecatch">
 {{#if feature_image}}
-	<section id="eyecatch" style="background-image: url('{{feature_image}}')">
+	<div class="wrap" style="background-image: url('{{feature_image}}')">
 {{else}}
-	<section id="eyecatch" class="noimg">
+	<div class="wrap" class="noimg">
 {{/if}}
-<div class="wrap">
 {{#is "page"}}
 	<div class="post-head page-head">
 		<h1>{{title}}</h1>
