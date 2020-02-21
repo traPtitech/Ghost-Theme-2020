@@ -7,7 +7,9 @@
     },
     "author": "traP",
     "scripts": {
-        "build": "webpack"
+        "build": "npm run font-build && npm run webpack",
+        "webpack": "webpack",
+        "font-build": "node font-build.js"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.27",
@@ -33,9 +35,12 @@
         "cssnano-preset-advanced": "^4.0.7",
         "fibers": "^4.0.2",
         "file-loader": "^5.0.2",
+        "got": "^10.6.0",
+        "handlebars": "^4.7.3",
         "html-webpack-plugin": "^3.2.0",
         "mini-css-extract-plugin": "^0.9.0",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
+        "postcss": "^7.0.27",
         "preload-webpack-plugin": "^3.0.0-beta.4",
         "sass": "^1.25.0",
         "sass-loader": "^8.0.2",
