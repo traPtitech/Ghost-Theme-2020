@@ -132,3 +132,20 @@
 		</div>
 	</div>
 </section>
+<script type="application/ld+json">
+{
+	"@context":"https://schema.org",
+	"@type":"ItemList",
+	"itemListElement":[
+{{#get "posts" filter="tag:news" limit="4"}}
+	{{#foreach posts}}
+		{
+			"@type":"ListItem",
+			"position": "{{ @number }}",
+			"url":"{{ url }}"
+		}{{#unless @last}},{{/unless}}
+	{{/foreach}}
+{{/get}}
+	]
+}
+</script>
