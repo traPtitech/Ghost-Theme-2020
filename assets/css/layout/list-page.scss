@@ -37,12 +37,14 @@
 	ul {
 		display: inline-flex;
 		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
 		padding: 0;
 		&:not(.with-prev) {
 			padding-left: 2em;
 		}
 		&:not(.with-next) {
-			padding-left: 2em;
+			padding-right: 2em;
 		}
 	}
 	li {
@@ -57,17 +59,15 @@
 			color: #fff;
 			background-color: #005bac;
 		}
-		&:hover {
+		&:not(.ellipsis):hover {
 			color: #fff;
 			background-color: #888;
 		}
 
-		&.ellipsis {
-			display: flex;
-			align-items: center;
-		}
 		&.prev, &.next {
-			transform: scaleY(1.5);
+			a {
+				transform: scaleY(1.5);
+			}
 		}
 	}
 	a {
