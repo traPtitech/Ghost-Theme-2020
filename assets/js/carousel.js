@@ -11,6 +11,7 @@ export const setupCarousel = () => {
 		slidesPerView: 1,
 		spaceBetween: 0,
 		centeredSlides : true,
+		preloadImages: false,
 		breakpoints: {
 			840: {
 				slidesPerView: 2,
