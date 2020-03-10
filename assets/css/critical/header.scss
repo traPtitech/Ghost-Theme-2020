@@ -17,6 +17,7 @@ header {
 		top: 0;
 		z-index: 3;
 		background: #fff;
+		transition: height .25s;
 		&.thin {
 			height: 3.5rem;
 			.circleLogo {
@@ -28,6 +29,15 @@ header {
 			ul.nav a {
 				padding: 1rem 1rem 0;
 			}
+		}
+		.circleLogo {
+			transition: margin .25s;
+			img {
+				transition: height .25s;
+			}
+		}
+		ul.nav a {
+			transition: padding .25s;
 		}
 	}
 
