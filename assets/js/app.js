@@ -4,6 +4,7 @@ import { faTwitter, faFacebookF, faYoutube } from '@fortawesome/free-brands-svg-
 import lozad from 'lozad';
 
 import { setupCarousel } from './carousel';
+import { setupHeaderThinToggle } from './header-thin-toggle';
 import { setupHyakkiyagyo } from './hyakkiyagyo';
 import { addLinkToImage } from './add-link-to-image';
 import { setupWebshare } from './web-share';
@@ -32,6 +33,9 @@ const onLoad = () => {
 
 	// top page carousel
 	setupCarousel();
+
+	// fixed header
+	setupHeaderThinToggle();
 
 	setupHyakkiyagyo();
 
