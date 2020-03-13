@@ -60,6 +60,12 @@
 		display: inline-block;
 		padding: 8px;
 		border-bottom: 4px solid #005bac;
+		a {
+			color: inherit;
+			&:not(:hover) {
+				text-decoration: none;
+			}
+		}
 	}
 	.pickup-entries {
 		a {
