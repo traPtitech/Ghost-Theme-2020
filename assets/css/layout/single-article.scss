@@ -2,11 +2,16 @@ article {
 	margin: 5em auto;
 	width: 80%;
 	overflow-wrap: break-word;
-	p .orig-link > img, .kg-image-card .orig-link > img {
-		display: block;
-		margin: .4em .1em;
-		border: 3px solid #ddd;
-		border-radius: 2px;
+	p, .kg-image-card {
+		.orig-link {
+			display: inline-block;
+			> img {
+				display: block;
+				margin: .4em .1em;
+				border: 3px solid #ddd;
+				border-radius: 2px;
+			}
+		}
 	}
 	twitter-widget {
 		overflow-x: hidden;
