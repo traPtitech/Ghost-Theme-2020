@@ -71,7 +71,8 @@ module.exports = {
 			chunks: "app",
 			filename: "../../default.hbs",
 			template: "default.src.hbs",
-			inject: "head"
+			inject: "head",
+			minify: false
 		}),
 		new MiniCssExtractPlugin({ filename: "[name].[chunkhash].css" }),
 		new StyleExtHtmlWebpackPlugin({
