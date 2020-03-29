@@ -81,7 +81,7 @@ address {
 			.background {
 				width: 100%;
 				height: 100%;
-				object-fit: cover;
+				object-fit: contain;
 				margin-left: 100px;
 				opacity: .3;
 			}
