@@ -8,6 +8,7 @@ import { setupHeaderThinToggle } from './header-thin-toggle';
 import { setupHyakkiyagyo } from './hyakkiyagyo';
 import { addLinkToImage } from './add-link-to-image';
 import { setupWebshare } from './web-share';
+import { loadTwitterOnScrollOrTouch } from './load-twitter';
 
 import '../css/style.scss';
 
@@ -42,6 +43,11 @@ const onLoad = () => {
 	addLinkToImage();
 
 	setupWebshare();
+
+	const $twitter = document.querySelector('#lazy-load-twitter')
+	if ($twitter) {
+		loadTwitterOnScrollOrTouch();
+	}
 
 	// fill copyright year
 	document.querySelector(".copy span").textContent = new Date().getFullYear();
