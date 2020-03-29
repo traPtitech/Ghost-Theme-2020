@@ -1,3 +1,10 @@
+/* ヘッダー固定時のスクロール調整用 */
+html {
+	@media (min-width: 840px) {
+		scroll-padding-top: $header-thin-height;
+	}
+}
+
 header {
 	display: flex;
 	height: $header-height;
@@ -19,7 +26,7 @@ header {
 		background: #fff;
 		transition: height .25s;
 		&.thin {
-			height: 3.5rem;
+			height: $header-thin-height;
 			.circleLogo {
 				margin: 0.5rem 1rem;
 				img {
