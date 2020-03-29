@@ -4,12 +4,12 @@
 <a href="{{url}}" class="article noimg">
 {{/if}}
 	{{#if feature_image}}
-		<picture class="lozad background">
+		<picture class="lozad background" data-alt="{{title}} feature image">
 			<source srcset="{{feature_image}}.webp?webp=1&width=320" type="image/webp">
 			<source srcset="{{feature_image}}?width=320">
 		</picture>
 	{{else}}
-		<img class="lozad background" data-src="{{asset "logo/icon_white.svg"}}">
+		<img class="lozad background" data-src="{{asset "logo/icon_white.svg"}}" alt="{{title}} feature image">
 	{{/if}}
 	<div class="meta">
 		<small>{{date published_at format="YYYY年M月D日"}}</small>
@@ -19,9 +19,9 @@
 			{{#foreach authors limit="2"}}
 				{{#if @first}}
 					{{#if profile_image}}
-						<img class="lozad" data-src="{{profile_image}}">
+						<img class="lozad" data-src="{{profile_image}}" alt="{{name}} icon">
 					{{else}}
-						<img class="lozad" data-src="https://q.trap.jp/api/1.0/public/icon/traP">
+						<img class="lozad" data-src="https://q.trap.jp/api/1.0/public/icon/traP" alt="{{name}} icon">
 					{{/if}}
 					<span>{{name}}</span>
 				{{else}}

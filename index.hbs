@@ -2,9 +2,9 @@
 <section id="listhead">
 	{{#is "author"}}
 		{{#if author.profile_image}}
-			<img src="{{author.profile_image}}" decoding="async">
+			<img src="{{author.profile_image}}" decoding="async" alt="{{author.name}} icon">
 		{{else}}
-			<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async">
+			<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async" alt="{{author.name}} icon">
 		{{/if}}
 	{{/is}}
 	<div>
