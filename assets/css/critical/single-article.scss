@@ -13,11 +13,15 @@
 			object-fit: cover;
 		}
 		&.noimg {
-			.background > img {
-				height: 150%;
+			.background {
+				height: 100%;
 				width: auto;
-				margin-left: -10%;
-				opacity: .3;
+				img {
+					height: 150%;
+					width: auto;
+					margin-left: -10%;
+					opacity: .3;
+				}
 			}
 		}
 
