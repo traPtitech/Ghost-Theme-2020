@@ -7,30 +7,30 @@
 			max-height: calc(100vh - #{$header-sm-height});
 		}
 
-		.background > img {
+		.background{
 			height: 100%;
 			width: 100%;
-			object-fit: cover;
-		}
-		&.noimg {
-			.background {
-				height: auto;
-				width: auto;
-				img {
-					height: 150%;
-					width: auto;
-					margin-left: 10%;
-					opacity: .3;
-				}
+			img {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
 			}
 		}
-
 		&.noimg {
 			height: 400px;
 			background-color: #005bac;
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
+			.background {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				height: 150%;
+				img {
+					height: 150%;
+					width: auto;
+					margin-right: -10%;
+					opacity: .3;
+				}
+			}
 			> div {
 				background-color: transparent;
 			}
