@@ -9,14 +9,14 @@
 								{{#if @first }}
 								<picture>
 									<source srcset="{{feature_image}}.webp?webp=1&width=640" type="image/webp">
-									<img src="{{feature_image}}?width=640">
+									<img src="{{feature_image}}?width=640" alt="{{title}} feature image">
 								</picture>
 								{{else}}
-								<img data-src="{{feature_image}}?width=640" class="swiper-lazy">
+								<img data-src="{{feature_image}}?width=640" class="swiper-lazy" alt="{{title}} feature image">
 								<div class="swiper-lazy-preloader"></div>
 								{{/if}}
 							{{else}}
-								<img data-src="{{asset "logo/icon_blue.svg"}}" class="swiper-lazy">
+								<img data-src="{{asset "logo/icon_blue.svg"}}" class="swiper-lazy" alt="{{title}} feature image">
 								<div class="swiper-lazy-preloader"></div>
 							{{/if}}
 							<div class="title">
@@ -111,12 +111,12 @@
 				{{#foreach posts}}
 					<a href="{{url}}" class="headline-entry">
 					{{#if feature_image}}
-						<picture class="lozad">
+						<picture class="lozad" data-alt="{{title}} feature image">
 							<source srcset="{{feature_image}}.webp?webp=1&width=320" type="image/webp">
 							<source srcset="{{feature_image}}?width=320">
 						</picture>
 					{{else}}
-						<img class="lozad" data-src="{{asset "logo/icon_blue.svg"}}">
+						<img class="lozad" data-src="{{asset "logo/icon_blue.svg"}}"  alt="{{title}} feature image">
 					{{/if}}
 						<div class="headline-text">
 							<small>{{date published_at format="YYYY年M月D日"}}</small>

@@ -7,9 +7,9 @@
 			<source srcset="{{feature_image}}.webp?webp=1&width=640" media="(max-width: 640px)" type="image/webp">
 			<source srcset="{{feature_image}}?width=640" media="(max-width: 640px)">
 			<source srcset="{{feature_image}}.webp?webp=1" type="image/webp">
-			<img src="{{feature_image}}">
+			<img src="{{feature_image}}" alt="feature image">
 		{{else}}
-			<img src="{{asset "logo/icon_white.svg"}}">
+			<img src="{{asset "logo/icon_white.svg"}}" alt="feature image">
 		{{/if}}
 		</picture>
 		{{#is "page"}}
@@ -41,9 +41,9 @@
 			<div class="author">
 				<a href="{{url}}">
 					{{#if profile_image}}
-						<img src="{{profile_image}}" decoding="async">
+						<img src="{{profile_image}}" decoding="async" alt="{{name}} icon">
 					{{else}}
-						<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async">
+						<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async" alt="{{name}} icon">
 					{{/if}}
 					<span>{{name}}</span>
 				</a>
@@ -57,9 +57,9 @@
 			<div class="author">
 				<a href="{{url}}">
 					{{#if profile_image}}
-						<img src="{{profile_image}}" decoding="async">
+						<img src="{{profile_image}}" decoding="async" alt="{{name}} icon">
 					{{else}}
-						<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async">
+						<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async" alt="{{name}} icon">
 					{{/if}}
 				</a>
 			</div>
@@ -75,9 +75,9 @@
 			<div class="author-detail">
 				<a href="{{url}}">
 					{{#if profile_image}}
-						<img class="lozad" data-src="{{profile_image}}">
+						<img class="lozad" data-src="{{profile_image}}" alt="{{name}} icon">
 					{{else}}
-						<img class="lozad" data-src="https://q.trap.jp/api/1.0/public/icon/traP">
+						<img class="lozad" data-src="https://q.trap.jp/api/1.0/public/icon/traP" alt="{{name}} icon">
 					{{/if}}
 				</a>
 				<div>
