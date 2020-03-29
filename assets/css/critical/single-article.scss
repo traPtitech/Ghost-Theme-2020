@@ -3,26 +3,30 @@
 		position: relative;
 		height: 600px;
 		max-height: calc(100vh - #{$header-height});
-		background-size: cover;
-		background-position: center;
 		@media (max-width: 840px) {
 			max-height: calc(100vh - #{$header-sm-height});
+		}
+
+		.background > img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+		&.noimg {
+			.background > img {
+				height: 150%;
+				width: auto;
+				margin-left: -10%;
+				opacity: .3;
+			}
 		}
 
 		&.noimg {
 			height: 400px;
 			background-color: #005bac;
-			&::before {
-				content: "";
-				display: block;
-				width: 100%;
-				height: 100%;
-				background-image: url(../logo/icon_white.svg);
-				background-size: auto 150%;
-				background-position: 110% 50%;
-				background-repeat: no-repeat;
-				opacity: .3;
-			}
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
 			> div {
 				background-color: transparent;
 			}

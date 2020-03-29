@@ -9,14 +9,14 @@
 								{{#if @first }}
 								<picture>
 									<source srcset="{{feature_image}}.webp?webp=1&width=640" type="image/webp">
-									<img src="{{feature_image}}?width=640" decoding="async">
+									<img src="{{feature_image}}?width=640">
 								</picture>
 								{{else}}
 								<img data-src="{{feature_image}}?width=640" class="swiper-lazy">
 								<div class="swiper-lazy-preloader"></div>
 								{{/if}}
 							{{else}}
-								<img data-src="{{asset "logo/icon_blue.svg"}}" class="swiper-lazy">
+								<img data-src="{{asset "logo/icon.svg"}}" class="swiper-lazy" style="color:#005bac">
 								<div class="swiper-lazy-preloader"></div>
 							{{/if}}
 							<div class="title">
@@ -116,7 +116,7 @@
 							<source srcset="{{feature_image}}?width=320">
 						</picture>
 					{{else}}
-						<img class="lozad" data-src="{{asset "logo/icon_blue.svg"}}">
+						<img class="lozad" data-src="{{asset "logo/icon.svg"}}"  style="color:#005bac">
 					{{/if}}
 						<div class="headline-text">
 							<small>{{date published_at format="YYYY年M月D日"}}</small>
@@ -126,9 +126,8 @@
 				{{/foreach}}
 			{{/get}}
 		</div>
-		<div>
+		<div id="lazy-load-twitter">
 			<a class="twitter-timeline" data-height="500" href="https://twitter.com/traPtitech">Tweets by traPtitech</a>
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 	</div>
 </section>

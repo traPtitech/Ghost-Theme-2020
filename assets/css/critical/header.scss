@@ -1,3 +1,11 @@
+/* ヘッダー固定時のスクロール調整用 */
+html {
+	scroll-padding-top: $header-thin-height;
+	@media (max-width: 840px) {
+		scroll-padding-top: 0;
+	}
+}
+
 header {
 	display: flex;
 	height: $header-height;
@@ -6,40 +14,40 @@ header {
 	color: #005bac;
 
 	@media (max-width: 840px) {
+		postion: static;
 		flex-direction: column;
 		height: auto;
 		max-height: $header-sm-height;
 	}
 
 	/* ヘッダー固定関連 */
-	@media (min-width: 840px) {
-		position: sticky;
-		top: 0;
-		z-index: 3;
-		background: #fff;
-		transition: height .25s;
-		&.thin {
-			height: 3.5rem;
-			.circleLogo {
-				margin: 0.5rem 1rem;
-				img {
-					height: 2rem;
-				}
-			}
-			ul.nav a {
-				padding: 1rem 1rem 0;
-			}
-		}
+	position: sticky;
+	top: 0;
+	z-index: 3;
+	background: #fff;
+	transition: height .25s;
+	&.thin {
+		height: $header-thin-height;
 		.circleLogo {
-			transition: margin .25s;
+			margin: 0.5rem 1rem;
 			img {
-				transition: height .25s;
+				height: 2rem;
 			}
 		}
 		ul.nav a {
-			transition: padding .25s;
+			padding: 1rem 1rem 0;
 		}
 	}
+	.circleLogo {
+		transition: margin .25s;
+		img {
+			transition: height .25s;
+		}
+	}
+	ul.nav a {
+		transition: padding .25s;
+	}
+	/* ヘッダー固定関連ここまで */
 
 	.circleLogo {
 		margin-top: 1.6rem;

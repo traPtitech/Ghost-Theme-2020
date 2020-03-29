@@ -1,64 +1,70 @@
 {{!< default}}
 {{#post}}
 <section id="eyecatch">
-{{#if feature_image}}
-	<div class="wrap" style="background-image: url('{{feature_image}}')">
-{{else}}
-	<div class="wrap noimg">
-{{/if}}
-{{#is "page"}}
-	<div class="post-head page-head">
-		<h1>{{title}}</h1>
-	</div>
-{{else}}
-	<div class="post-head">
-		<p class="meta">
-			{{date published_at format="YYYY年M月D日"}}
-			|
-			{{#has tag="お知らせ"}}
-				<a href="/tag/news">お知らせ</a>
-			{{/has}}
-			{{#has tag="作品紹介"}}
-				<a href="/tag/works">作品紹介</a>
-			{{/has}}
-			{{^has tag="お知らせ,作品紹介"}}
-				<a href="/page/1/">ブログ記事</a>
-			{{/has}}
-		</p>
-		<h1>{{title}}</h1>
-		<div class="tags">
-			{{tags separator=" "}}
+	<div class="wrap{{#unless feature_image}} noimg{{/unless}}">
+		<picture class="background">
+		{{#if feature_image}}
+			<source srcset="{{feature_image}}.webp?webp=1&width=640" media="(max-width: 640px)" type="image/webp">
+			<source srcset="{{feature_image}}?width=640" media="(max-width: 640px)">
+			<source srcset="{{feature_image}}.webp?webp=1" type="image/webp">
+			<img src="{{feature_image}}">
+		{{else}}
+			<img src="{{asset "logo/icon.svg"}}" style="color:white">
+		{{/if}}
+		</picture>
+		{{#is "page"}}
+		<div class="post-head page-head">
+			<h1>{{title}}</h1>
 		</div>
-	</div>
-	<div class="main-authors">
-	{{#foreach authors limit="3"}}
-		<div class="author">
-			<a href="{{url}}">
-				{{#if profile_image}}
-					<img src="{{profile_image}}" decoding="async">
-				{{else}}
-					<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async">
-				{{/if}}
-				<span>{{name}}</span>
-			</a>
+		{{else}}
+		<div class="post-head">
+			<p class="meta">
+				{{date published_at format="YYYY年M月D日"}}
+				|
+				{{#has tag="お知らせ"}}
+					<a href="/tag/news">お知らせ</a>
+				{{/has}}
+				{{#has tag="作品紹介"}}
+					<a href="/tag/works">作品紹介</a>
+				{{/has}}
+				{{^has tag="お知らせ,作品紹介"}}
+					<a href="/page/1/">ブログ記事</a>
+				{{/has}}
+			</p>
+			<h1>{{title}}</h1>
+			<div class="tags">
+				{{tags separator=" "}}
+			</div>
 		</div>
-	{{/foreach}}
-	</div>
-{{/is}}
-</div>
-<div class="sub-authors">
-	{{#foreach authors from="4"}}
-		<div class="author">
-			<a href="{{url}}">
-				{{#if profile_image}}
-					<img src="{{profile_image}}" decoding="async">
-				{{else}}
-					<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async">
-				{{/if}}
-			</a>
+		<div class="main-authors">
+		{{#foreach authors limit="3"}}
+			<div class="author">
+				<a href="{{url}}">
+					{{#if profile_image}}
+						<img src="{{profile_image}}" decoding="async">
+					{{else}}
+						<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async">
+					{{/if}}
+					<span>{{name}}</span>
+				</a>
+			</div>
+		{{/foreach}}
 		</div>
-	{{/foreach}}
-</div>
+		{{/is}}
+	</div>
+	<div class="sub-authors">
+		{{#foreach authors from="4"}}
+			<div class="author">
+				<a href="{{url}}">
+					{{#if profile_image}}
+						<img src="{{profile_image}}" decoding="async">
+					{{else}}
+						<img src="https://q.trap.jp/api/1.0/public/icon/traP" decoding="async">
+					{{/if}}
+				</a>
+			</div>
+		{{/foreach}}
+	</div>
 </section>
 <article>
 	{{content}}
