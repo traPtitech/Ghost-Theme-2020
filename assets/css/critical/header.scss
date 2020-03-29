@@ -1,74 +1,79 @@
 /* ヘッダー固定時のスクロール調整用 */
 html {
-	scroll-padding-top: $header-thin-height;
-	@media (max-width: 840px) {
-		scroll-padding-top: 0;
+	@media (min-width: 840px) {
+		scroll-padding-top: $header-thin-height;
 	}
 }
 
 header {
 	display: flex;
-	height: $header-height;
 	border-bottom: 6px solid #005bac;
 	justify-content: space-between;
 	color: #005bac;
 
-	@media (max-width: 840px) {
-		postion: static;
-		flex-direction: column;
-		height: auto;
-		max-height: $header-sm-height;
+	flex-direction: column;
+	height: auto;
+	max-height: $header-sm-height;
+	@media (min-width: 840px) {
+		flex-direction: row;
+		height: $header-height;
+		max-height: auto;
 	}
 
 	/* ヘッダー固定関連 */
-	position: sticky;
-	top: 0;
-	z-index: 3;
-	background: #fff;
-	transition: height .25s;
-	&.thin {
-		height: $header-thin-height;
+	@media (min-width: 840px) {
+		position: sticky;
+		top: 0;
+		z-index: 3;
+		background: #fff;
+		transition: height .25s;
+		&.thin {
+			height: $header-thin-height;
+			.circleLogo {
+				margin: 0.5rem 1rem;
+				img {
+					height: 2rem;
+				}
+			}
+			ul.nav a {
+				padding: 1rem 1rem 0;
+			}
+		}
 		.circleLogo {
-			margin: 0.5rem 1rem;
+			transition: margin .25s;
 			img {
-				height: 2rem;
+				transition: height .25s;
 			}
 		}
 		ul.nav a {
-			padding: 1rem 1rem 0;
+			transition: padding .25s;
 		}
 	}
-	.circleLogo {
-		transition: margin .25s;
-		img {
-			transition: height .25s;
-		}
-	}
-	ul.nav a {
-		transition: padding .25s;
-	}
-	/* ヘッダー固定関連ここまで */
 
 	.circleLogo {
-		margin-top: 1.6rem;
-		@media (max-width: 840px) {
-			margin: 1.6rem 0;
+		margin-top: 1.6rem 0;
+		@media (min-width: 840px) {
+			margin: 1.6rem;
 		}
 	}
 }
 
 ul.nav {
 	display: flex;
-	margin: 0 1rem 0 0;
+	flex-wrap: wrap;
+	margin: 0;
+	padding-left: 2.5rem;
 	li {
+		flex: 1 0 auto;
 		list-style: none;
 	}
 	a {
 		display: block;
 		height: 100%;
-		padding: 2.3rem 1rem 0 1rem;
+		padding: .5rem 1rem;
 		font-weight: 300;
 		color: inherit;
+		text-align: center;
 		text-decoration: none;
 		transition: 250ms background-color, 250ms color;
 		word-break: keep-all;
@@ -78,16 +83,11 @@ ul.nav {
 		}
 	}
 
-	@media (max-width: 840px) {
-		margin: 0;
-		padding: 0;
-		flex-wrap: wrap;
-		li {
-			flex: 1 0 auto;
-		}
+	@media (min-width: 840px) {
+		flex-wrap: nowrap;
+		margin: 0 1rem 0 0;
 		a {
-			text-align: center;
-			padding: .5rem 1rem;
+			padding: 2.3rem 1rem 0 1rem;
 		}
 	}
 }
