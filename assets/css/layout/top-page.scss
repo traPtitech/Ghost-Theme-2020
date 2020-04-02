@@ -54,7 +54,7 @@
 		font-weight: 400;
 		font-size: 1.6rem;
 	}
-	.pickup-series h2 {
+	h2 {
 		font-weight: 400;
 		font-size: 1.2rem;
 		display: inline-block;
@@ -65,6 +65,28 @@
 			&:not(:hover) {
 				text-decoration: none;
 			}
+		}
+	}
+	@media (max-width: 600px) {
+		.pickup-series {
+			position: relative;
+		}
+		.pickup-entries-wrapper {
+			overflow-x: scroll;
+			overflow-y: hidden;
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				height: 100%;
+				width: 5%;
+				background: linear-gradient(90deg, transparent, #333)
+			}
+		}
+		.pickup-entries {
+			width: max-content;
 		}
 	}
 	.pickup-entries {
