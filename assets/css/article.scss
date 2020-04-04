@@ -1,8 +1,11 @@
 article {
-	.kg-card figcaption {
-		color: #777;
-		margin-top: 0.3em;
-		text-align: center;
+	.kg-card-hascaption {
+		width: fit-content;
+		figcaption {
+			color: #777;
+			margin-top: 0.3em;
+			text-align: center;
+		}
 	}
 
 	.kg-image-card {
