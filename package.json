@@ -22,7 +22,7 @@
         "lodash.throttle": "^4.1.1",
         "lozad": "^1.15.0",
         "normalize.css": "^8.0.1",
-        "swiper": "^5.3.6"
+        "swiper": "^5.4.1"
     },
     "devDependencies": {
         "@babel/core": "^7.10.2",
