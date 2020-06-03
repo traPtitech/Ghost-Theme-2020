@@ -19,10 +19,10 @@
         "core-js": "^3.6.5",
         "highlight.js": "^10.0.3",
         "katex": "^0.11.1",
-        "lodash.throttle": "^4.1.1",
         "lozad": "^1.15.0",
         "normalize.css": "^8.0.1",
-        "swiper": "^5.4.1"
+        "swiper": "^5.4.1",
+        "throttle-debounce": "^2.1.0"
     },
     "devDependencies": {
         "@babel/core": "^7.10.2",
