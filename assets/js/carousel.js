@@ -1,4 +1,4 @@
-import { Swiper, Navigation, Pagination, Lazy} from "swiper/js/swiper.esm.js";
+import Swiper, {Navigation, Pagination, Lazy} from "swiper";
 
 export const setupCarousel = () => {
 	const $featured = document.querySelector('#featured')
