@@ -1,6 +1,6 @@
 article {
-  @import 'markdown/basic';
-  @import 'markdown/container';
-  @import 'markdown/katex';
-  @import 'markdown/highlight';
+  @import './basic';
+  @import './container';
+  @import './katex';
+  @import './highlight';
 }
