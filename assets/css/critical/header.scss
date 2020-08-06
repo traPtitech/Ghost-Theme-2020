@@ -18,9 +18,11 @@ header {
 		flex-direction: row;
 		height: $header-height;
 		max-height: auto;
+
+		contain: strict;
 	}
 
-	contain: strict;
+	contain: content;
 
 	/* ヘッダー固定関連 */
 	@media (min-width: 840px) {
