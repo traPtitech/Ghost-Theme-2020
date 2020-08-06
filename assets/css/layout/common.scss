@@ -5,6 +5,9 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	text-align: center;
+
+	contain: content;
+
 	@media (max-width: 700px) {
 		flex-direction: column-reverse;
 		.circleLogo {
@@ -55,6 +58,8 @@ address {
 
 #postlist {
 	padding: 2em 0;
+	contain: content;
+
 	h1 {
 		font-weight: 400;
 		font-size: 1.4rem;
@@ -166,6 +171,9 @@ address {
 	color: #fff;
 	background-color: #667;
 	overflow: hidden;
+
+	contain: content;
+
 	@media (max-width: 600px) {
 		flex-direction: column;
 	}

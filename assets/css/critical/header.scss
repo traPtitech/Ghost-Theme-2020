@@ -20,6 +20,8 @@ header {
 		max-height: auto;
 	}
 
+	contain: strict;
+
 	/* ヘッダー固定関連 */
 	@media (min-width: 840px) {
 		position: sticky;

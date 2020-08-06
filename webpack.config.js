@@ -120,7 +120,10 @@ module.exports = {
 				threshold: 1024,
 				minRatio: 0.9
 			})
-		]
+		],
+		splitChunks: {
+			chunks: 'all'
+		}
 	},
 	node: {
 		setImmediate: false
