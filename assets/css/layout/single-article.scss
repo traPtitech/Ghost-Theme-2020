@@ -39,6 +39,9 @@ article {
 #share {
 	padding: 2em 0;
 	text-align: center;
+
+	contain: content;
+
 	h1 {
 		font-weight: 400;
 		font-size: 1.4rem;
@@ -83,6 +86,9 @@ article {
 	padding: 1em;
 	border-radius: 2px;
 	border: 1px solid #aaa;
+
+	contain: content;
+
 	.author-detail {
 		display: flex;
 		@media (max-width: 500px) {

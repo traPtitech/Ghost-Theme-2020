@@ -9,6 +9,7 @@ import { setupHyakkiyagyo } from './hyakkiyagyo';
 import { addLinkToImage } from './add-link-to-image';
 import { setupWebshare } from './web-share';
 import { loadTwitterOnScrollOrTouch } from './load-twitter';
+import { loadSharesOnShow } from './load-shares';
 
 import '../css/style.scss';
 
@@ -47,6 +48,11 @@ const onLoad = () => {
 	const $twitter = document.querySelector('#lazy-load-twitter')
 	if ($twitter) {
 		loadTwitterOnScrollOrTouch();
+	}
+
+	const $share = document.querySelector('#share')
+	if ($share) {
+		loadSharesOnShow();
 	}
 
 	// fill copyright year
