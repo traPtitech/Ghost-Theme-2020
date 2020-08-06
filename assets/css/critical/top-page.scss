@@ -6,6 +6,8 @@
 		max-height: calc(100vh - #{$header-sm-height});
 	}
 
+	contain: strict;
+
 	.swiper-slide > a {
 		display: block;
 		position: relative;
