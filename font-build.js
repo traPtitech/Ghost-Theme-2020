@@ -154,13 +154,12 @@ const generateFontFace = (font, filename) => {
 
   let cssText = ''
   let criticalCssText = ''
-  const promises = []
   for (const font of fonts) {
     const isCritical = font.weight === '400' && fontIncludesChar(font, chars)
     const filename = generateFilename(font, isCritical)
     const fontFaceText = generateFontFace(font, filename)
 
-    promises.push(downloadToTmp(getUrlFromSrc(font.src), filename))
+    await downloadToTmp(getUrlFromSrc(font.src), filename)
 
     if (isCritical) {
       criticalCssText += fontFaceText
@@ -169,10 +168,10 @@ const generateFontFace = (font, filename) => {
     }
   }
 
-  promises.push(fs.writeFile('./assets/css/tmp/noto.css', cssText, 'utf-8'))
-  promises.push(fs.writeFile('./assets/css/tmp/noto-critical.css', criticalCssText, 'utf-8'))
-
-  await promises
+  await Promise.all([
+    fs.writeFile('./assets/css/tmp/noto.css', cssText, 'utf-8'),
+    fs.writeFile('./assets/css/tmp/noto-critical.css', criticalCssText, 'utf-8')
+  ])
 
   console.log('Output font files')
 })()
