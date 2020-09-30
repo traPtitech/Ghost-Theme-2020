@@ -6,7 +6,7 @@ const stream = require('stream')
 const path = require('path')
 const { promisify } = require('util')
 
-const FONT_CSS_URL = 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,700&display=swap&subset=japanese'
+const FONT_CSS_URL = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap&subset=japanese'
 
 const pipeline = promisify(stream.pipeline);
 
@@ -154,13 +154,12 @@ const generateFontFace = (font, filename) => {
 
   let cssText = ''
   let criticalCssText = ''
-  const promises = []
   for (const font of fonts) {
     const isCritical = font.weight === '400' && fontIncludesChar(font, chars)
     const filename = generateFilename(font, isCritical)
     const fontFaceText = generateFontFace(font, filename)
 
-    promises.push(downloadToTmp(getUrlFromSrc(font.src), filename))
+    await downloadToTmp(getUrlFromSrc(font.src), filename)
 
     if (isCritical) {
       criticalCssText += fontFaceText
@@ -169,10 +168,10 @@ const generateFontFace = (font, filename) => {
     }
   }
 
-  promises.push(fs.writeFile('./assets/css/tmp/noto.css', cssText, 'utf-8'))
-  promises.push(fs.writeFile('./assets/css/tmp/noto-critical.css', criticalCssText, 'utf-8'))
-
-  await promises
+  await Promise.all([
+    fs.writeFile('./assets/css/tmp/noto.css', cssText, 'utf-8'),
+    fs.writeFile('./assets/css/tmp/noto-critical.css', criticalCssText, 'utf-8')
+  ])
 
   console.log('Output font files')
 })()
