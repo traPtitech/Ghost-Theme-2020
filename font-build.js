@@ -6,7 +6,7 @@ const stream = require('stream')
 const path = require('path')
 const { promisify } = require('util')
 
-const FONT_CSS_URL = 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,700&display=swap&subset=japanese'
+const FONT_CSS_URL = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap&subset=japanese'
 
 const pipeline = promisify(stream.pipeline);
 
