@@ -52,7 +52,7 @@ const onLoad = () => {
 
 	const $share = document.querySelector('#share')
 	if ($share) {
-		loadSharesOnShow();
+		loadSharesOnShow($share);
 	}
 
 	// fill copyright year
