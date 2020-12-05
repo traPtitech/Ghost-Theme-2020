@@ -1,4 +1,4 @@
-#featured {
+:not(article) #featured {
 	height: 25rem;
 	max-height: calc(100vh - #{$header-height});
 	@media (max-width: 840px) {

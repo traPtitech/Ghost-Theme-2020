@@ -1,5 +1,5 @@
 {{!< default}}
-<section id="listhead">
+<section class="listhead">
 	{{#is "author"}}
 		{{#if author.profile_image}}
 			<img src="{{author.profile_image}}" decoding="async" alt="{{author.name}} icon">
@@ -25,7 +25,7 @@
 		{{/is}}
 	</div>
 </section>
-<section id="postlist">
+<section class="postlist">
 	{{#is "author"}}
 		<h1>{{author.name}}の書いた記事</h1>
 	{{/is}}

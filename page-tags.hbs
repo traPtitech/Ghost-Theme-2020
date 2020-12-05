@@ -1,10 +1,10 @@
 {{!< default}}
-<section id="listhead">
+<section class="listhead">
 	<div>
 		<h1>全てのタグ</h1>
 	</div>
 </section>
-<section id="taglist">
+<section class="taglist">
 	<ul>
 		{{#get "tags" limit="all" include="count.posts" order="count.posts desc"}}
 			{{#foreach tags}}

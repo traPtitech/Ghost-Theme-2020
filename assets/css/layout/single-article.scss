@@ -36,7 +36,7 @@ article {
 	}
 }
 
-#share {
+:not(article) #share {
 	padding: 2em 0;
 	text-align: center;
 
@@ -80,7 +80,7 @@ article {
 	}
 }
 
-#authors-detail {
+.authors-detail {
 	margin: 0 auto;
 	width: 70%;
 	padding: 1em;
