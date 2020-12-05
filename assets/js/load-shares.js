@@ -16,7 +16,7 @@ const loadShares = () => {
   fb.defer = true;
   fb.crossOrigin = 'anonymous'
   fb.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v5.0'
-  document.head.appendChild(db)
+  document.head.appendChild(fb)
 }
 
 export const loadSharesOnShow = element => {
