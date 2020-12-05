@@ -5,11 +5,11 @@
 {{/if}}
 	{{#if feature_image}}
 		<picture class="lozad background" data-alt="{{title}} feature image">
-			<source srcset="{{feature_image}}.webp?webp=1&width=320" type="image/webp">
-			<source srcset="{{feature_image}}?width=320">
+			<source srcset="{{feature_image}}.webp?webp=1&width=320" type="image/webp" width="320">
+			<source srcset="{{feature_image}}?width=320" width="320">
 		</picture>
 	{{else}}
-		<img class="lozad background" data-src="{{asset "logo/icon_white.svg"}}" alt="{{title}} feature image">
+		<img class="lozad background" data-src="{{asset "logo/icon_white.svg"}}" alt="{{title}} feature image" width="621" height="600">
 	{{/if}}
 	<div class="meta">
 		<small>{{date published_at format="YYYY年M月D日"}}</small>
