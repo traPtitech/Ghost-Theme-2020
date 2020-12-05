@@ -8,18 +8,18 @@
 							{{#if feature_image}}
 								{{#if @first }}
 								<picture>
-									<source srcset="{{feature_image}}.webp?webp=1&width=640" type="image/webp">
-									<img src="{{feature_image}}?width=640" alt="{{title}} feature image">
+									<source srcset="{{feature_image}}.webp?webp=1&width=640" type="image/webp" width="640">
+									<img src="{{feature_image}}?width=640" alt="{{title}} feature image" width="640">
 								</picture>
 								{{else}}
 								<picture>
-									<source data-srcset="{{feature_image}}.webp?webp=1&width=640" type="image/webp">
-									<img data-src="{{feature_image}}?width=640" class="swiper-lazy" alt="{{title}} feature image">
+									<source data-srcset="{{feature_image}}.webp?webp=1&width=640" type="image/webp" width="640">
+									<img data-src="{{feature_image}}?width=640" class="swiper-lazy" alt="{{title}} feature image" width="640">
 								</picture>
 								<div class="swiper-lazy-preloader"></div>
 								{{/if}}
 							{{else}}
-								<img data-src="{{asset "logo/icon_blue.svg"}}" class="swiper-lazy" alt="{{title}} feature image">
+								<img data-src="{{asset "logo/icon_blue.svg"}}" class="swiper-lazy" alt="{{title}} feature image" width="602" height="400">
 								<div class="swiper-lazy-preloader"></div>
 							{{/if}}
 							<div class="title">
@@ -131,7 +131,7 @@
 							<source srcset="{{feature_image}}?width=320">
 						</picture>
 					{{else}}
-						<img class="lozad" data-src="{{asset "logo/icon_blue.svg"}}"  alt="{{title}} feature image">
+						<img class="lozad" data-src="{{asset "logo/icon_blue.svg"}}"  alt="{{title}} feature image" width="602" height="400">
 					{{/if}}
 						<div class="headline-text">
 							<small>{{date published_at format="YYYY年M月D日"}}</small>

@@ -20,7 +20,7 @@
 <body>
 	<header>
 		<a class="circleLogo" href="/">
-			<img src="{{asset "logo/full_blue.svg"}}" decoding="async" alt="traP full logo">
+			<img src="{{asset "logo/full_blue.svg"}}" decoding="async" alt="traP full logo" width="343" height="48">
 		</a>
 		{{navigation}}
 	</header>
@@ -33,22 +33,22 @@
 	<footer>
 		<div class="copy">
 			<a class="circleLogo" href="/">
-				<img class="lozad" data-src="{{asset "logo/full_white.svg"}}" alt="traP full logo">
+				<img class="lozad" data-src="{{asset "logo/full_white.svg"}}" alt="traP full logo" width="343" height="48">
 			</a>
 			<small>&copy; 2015-<span></span> traP TokyoTech</small>
 		</div>
 		<address>
 			{{#if @site.twitter}}
-				<a target="_blank" href="{{twitter_url @site.twitter}}" class="twitter-footer">
+				<a target="_blank" href="{{twitter_url @site.twitter}}" class="twitter-footer" rel="noopener">
 					<i class="fab fa-twitter" aria-hidden="true"></i>
 				</a>
 			{{/if}}
 			{{#if @site.facebook}}
-				<a target="_blank" href="{{facebook_url @site.facebook}}" class="facebook-footer">
+				<a target="_blank" href="{{facebook_url @site.facebook}}" class="facebook-footer" rel="noopener">
 					<i class="fab fa-facebook-f" aria-hidden="true"></i>
 				</a>
 			{{/if}}
-			<a target="_blank" href="https://www.youtube.com/channel/UCyQb-L_oCtP-NtBJQ28D4lA" class="youtube-footer">
+			<a target="_blank" href="https://www.youtube.com/channel/UCyQb-L_oCtP-NtBJQ28D4lA" class="youtube-footer" rel="noopener">
 				<i class="fab fa-youtube" aria-hidden="true"></i>
 			</a>
 		</address>
