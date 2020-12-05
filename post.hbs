@@ -67,6 +67,12 @@
 	</div>
 </section>
 <article>
+	{{#has tag="R15"}}
+		<div class="r15-warning">
+			<img src="{{asset "message-alert.svg"}}" class="r15-warning-icon" alt="warning icon" height="16" width="16" />
+			<div>この記事は過激な内容を含みます。中学生を含む15歳未満の方は閲覧をお控えください。</div>
+		</div>
+	{{/has}}
 	{{content}}
 </article>
 {{^is "page"}}
