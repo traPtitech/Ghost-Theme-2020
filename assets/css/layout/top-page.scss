@@ -1,4 +1,4 @@
-#about {
+.about-trap {
 	text-align: center;
 	padding: 2em 5%;
 	word-break: keep-all;
@@ -25,7 +25,7 @@
 	}
 }
 
-#about, #postlist {
+.about-trap, .postlist {
 	.readmore {
 		text-decoration: none;
 		background-color: #005bac;
@@ -48,7 +48,7 @@
 	text-align: center;
 }
 
-#pickup {
+.pickup {
 	padding: 2em 0;
 	color: #fff;
 	background-color: #333;
@@ -138,7 +138,7 @@
 	}
 }
 
-#news {
+.news {
 	padding: 2em 0;
 	contain: content;
 

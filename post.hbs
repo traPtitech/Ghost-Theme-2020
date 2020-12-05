@@ -1,6 +1,6 @@
 {{!< default}}
 {{#post}}
-<section id="eyecatch">
+<section class="eyecatch">
 	<div class="wrap{{#unless feature_image}} noimg{{/unless}}">
 		<picture class="background">
 		{{#if feature_image}}
@@ -70,7 +70,7 @@
 	{{content}}
 </article>
 {{^is "page"}}
-	<section id="authors-detail">
+	<section class="authors-detail">
 		{{#foreach authors}}
 			<div class="author-detail">
 				<a href="{{url}}">
@@ -115,7 +115,7 @@
 	{{#if post.tags}}
 		{{#get "posts" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" limit="6"}}
 			{{#if posts.length}}
-				<section id="postlist">
+				<section class="postlist">
 					<h1>関連する記事</h1>
 					<div class="articles">
 						{{#foreach posts}}
@@ -128,7 +128,7 @@
 	{{else}}
 		{{#get "posts" filter="authors:{{post.primary_author.slug}}+id:-{{post.id}}" include="authors" limit="6"}}
 			{{#if posts.length}}
-				<section id="postlist">
+				<section class="postlist">
 					<h1>関連する記事</h1>
 					<div class="articles">
 						{{#foreach posts}}
