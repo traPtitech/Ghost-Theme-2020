@@ -19,12 +19,14 @@ const loadShares = () => {
   document.head.appendChild(db)
 }
 
-export const loadSharesOnShow = () => {
+export const loadSharesOnShow = element => {
   new IntersectionObserver((entries, observer) => {
-    loadShares()
-    observer.disconnect()
+    if (entries.some(e => e.isIntersecting)) {
+      loadShares()
+      observer.disconnect()
+    }
   }, {
     root: document.body,
-    rootMargin: '20px'
-  })
+    rootMargin: '100px'
+  }).observe(element)
 }
