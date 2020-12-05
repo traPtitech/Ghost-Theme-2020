@@ -19,9 +19,9 @@
 			{{#foreach authors limit="2"}}
 				{{#if @first}}
 					{{#if profile_image}}
-						<img class="lozad" data-src="{{profile_image}}" alt="{{name}} icon">
+						<img class="lozad" data-src="{{profile_image}}" alt="{{name}} icon" height="256" width="256">
 					{{else}}
-						<img class="lozad" data-src="https://q.trap.jp/api/v3/public/icon/traP" alt="{{name}} icon">
+						<img class="lozad" data-src="https://q.trap.jp/api/v3/public/icon/traP" alt="{{name}} icon" height="256" width="256">
 					{{/if}}
 					<span>{{name}}</span>
 				{{else}}

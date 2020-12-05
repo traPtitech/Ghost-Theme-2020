@@ -41,9 +41,9 @@
 			<div class="author">
 				<a href="{{url}}">
 					{{#if profile_image}}
-						<img src="{{profile_image}}" decoding="async" alt="{{name}} icon">
+						<img src="{{profile_image}}" decoding="async" alt="{{name}} icon" height="256" width="256">
 					{{else}}
-						<img src="https://q.trap.jp/api/v3/public/icon/traP" decoding="async" alt="{{name}} icon">
+						<img src="https://q.trap.jp/api/v3/public/icon/traP" decoding="async" alt="{{name}} icon" height="256" width="256">
 					{{/if}}
 					<span>{{name}}</span>
 				</a>
@@ -57,9 +57,9 @@
 			<div class="author">
 				<a href="{{url}}">
 					{{#if profile_image}}
-						<img src="{{profile_image}}" decoding="async" alt="{{name}} icon">
+						<img src="{{profile_image}}" decoding="async" alt="{{name}} icon" height="256" width="256">
 					{{else}}
-						<img src="https://q.trap.jp/api/v3/public/icon/traP" decoding="async" alt="{{name}} icon">
+						<img src="https://q.trap.jp/api/v3/public/icon/traP" decoding="async" alt="{{name}} icon" height="256" width="256">
 					{{/if}}
 				</a>
 			</div>
@@ -67,6 +67,12 @@
 	</div>
 </section>
 <article>
+	{{#has tag="R15"}}
+		<div class="r15-warning">
+			<img src="{{asset "message-alert.svg"}}" class="r15-warning-icon" alt="warning icon" height="16" width="16" />
+			<div>この記事は過激な内容を含みます。中学生を含む15歳未満の方は閲覧をお控えください。</div>
+		</div>
+	{{/has}}
 	{{content}}
 </article>
 {{^is "page"}}
@@ -75,9 +81,9 @@
 			<div class="author-detail">
 				<a href="{{url}}">
 					{{#if profile_image}}
-						<img class="lozad" data-src="{{profile_image}}" alt="{{name}} icon">
+						<img class="lozad" data-src="{{profile_image}}" alt="{{name}} icon" height="256" width="256">
 					{{else}}
-						<img class="lozad" data-src="https://q.trap.jp/api/v3/public/icon/traP" alt="{{name}} icon">
+						<img class="lozad" data-src="https://q.trap.jp/api/v3/public/icon/traP" alt="{{name}} icon" height="256" width="256">
 					{{/if}}
 				</a>
 				<div>
