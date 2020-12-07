@@ -16,7 +16,7 @@ const pcOption = {
 	watchSlidesVisibility: true
 }
 
-const initSwiper = oldSwiper => {
+const initSwiper = ($featured, oldSwiper) => {
 	if (oldSwiper) {
 		oldSwiper.destroy()
 	}
@@ -53,8 +53,8 @@ export const setupCarousel = () => {
 
 	Swiper.use([Navigation, Pagination, Lazy]);
 
-	let swiper = initSwiper();
+	let swiper = initSwiper($featured);
 	window.addEventListener('resize', debounce(100, () => {
-		swiper = initSwiper(swiper);
+		swiper = initSwiper($featured, swiper);
 	}))
 };
