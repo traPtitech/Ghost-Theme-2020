@@ -12,6 +12,8 @@ export const setupHyakkiyagyo = () => {
 
 	// send css path to hyakkiyagyo
 	$hyakkiyagyo.addEventListener("load", () => {
+		if (!$hyakkiyagyo.src.startsWith(hyakkiyagyoOrigin)) return
+
 		$hyakkiyagyo.contentWindow.postMessage(
 			document.querySelector("link[rel=stylesheet][href*=\\/app]").href,
 			hyakkiyagyoOrigin
