@@ -10,7 +10,6 @@
         "build": "webpack"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^1.2.32",
         "@fortawesome/free-brands-svg-icons": "^5.15.1",
         "@fortawesome/free-solid-svg-icons": "^5.15.1",
         "@openfonts/source-code-pro_latin": "^1.44.2",
