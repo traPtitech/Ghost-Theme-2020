@@ -4,10 +4,8 @@
 	<div class="wrap{{#unless feature_image}} noimg{{/unless}}">
 		<picture class="background">
 		{{#if feature_image}}
-			<source srcset="{{feature_image}}.avif?avif=1&width=640" media="(max-width: 640px)" type="image/avif" width="640">
 			<source srcset="{{feature_image}}.webp?webp=1&width=640" media="(max-width: 640px)" type="image/webp" width="640">
 			<source srcset="{{feature_image}}?width=640" media="(max-width: 640px)" width="640">
-			<source srcset="{{feature_image}}.avif?avif=1" type="image/avif">
 			<source srcset="{{feature_image}}.webp?webp=1" type="image/webp">
 			<img src="{{feature_image}}" alt="feature image">
 		{{else}}
