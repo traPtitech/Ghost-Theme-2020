@@ -27,7 +27,10 @@
 				{{#has tag="作品紹介"}}
 					<a href="/tag/works">作品紹介</a>
 				{{/has}}
-				{{^has tag="お知らせ,作品紹介"}}
+				{{#has tag="活動紹介"}}
+					<a href="/tag/activities">活動紹介</a>
+				{{/has}}
+				{{^has tag="お知らせ,作品紹介,活動紹介"}}
 					<a href="/page/1/">ブログ記事</a>
 				{{/has}}
 			</p>
