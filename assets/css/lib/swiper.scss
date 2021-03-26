@@ -1,4 +1,8 @@
-// See '~swiper/swiper.scss'
+/*
+  '~swiper/swiper.scss'をimportするとwebfontがロードされるため
+
+  参考: https://github.com/nolimits4web/swiper/blob/master/src/swiper.scss
+*/
 
 @import "~swiper/swiper-vars";
 
@@ -42,6 +46,12 @@
 .swiper-container-free-mode > .swiper-wrapper {
   transition-timing-function: ease-out;
   margin: 0 auto;
+}
+.swiper-container-pointer-events {
+  touch-action: pan-y;
+  &.swiper-container-vertical {
+    touch-action: pan-x;
+  }
 }
 .swiper-slide {
   flex-shrink: 0;
