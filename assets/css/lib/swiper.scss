@@ -1,4 +1,8 @@
-// See '~swiper/swiper.scss'
+/*
+  '~swiper/swiper.scss'をimportするとwebfontがロードされるため
+
+  参考: https://github.com/nolimits4web/swiper/blob/master/src/swiper.scss
+*/
 
 @import "~swiper/swiper-vars";
 
