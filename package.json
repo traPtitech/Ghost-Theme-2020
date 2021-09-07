@@ -3,7 +3,8 @@
     "private": true,
     "version": "1.0.0",
     "engines": {
-        "ghost": ">=3.0.0"
+        "ghost": ">=3.0.0",
+        "ghost-api":"v4"
     },
     "author": "traP",
     "scripts": {
