@@ -2,14 +2,13 @@ const { join, resolve } = require("path");
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const StyleExtHtmlWebpackPlugin = require("style-ext-html-webpack-plugin");
-const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
-const PreloadWebpackPlugin = require('preload-webpack-plugin');
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
+const PreloadWebpackPlugin = require('@vue/preload-webpack-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default;
 
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const BrotliPlugin = require("brotli-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
 	mode: "production",
@@ -50,13 +49,11 @@ module.exports = {
 				]
 			}, {
 				test: /\.svg$/,
-				use: ["file-loader", "svgo-loader"]
+				loader: "svgo-loader",
+				type: 'asset/resource'
 			}, {
 				test: /\.(eot|ttf|otf|woff2?)$/,
-				loader: "file-loader",
-				options: {
-					name: '[name].[contenthash:7].[ext]'
-				}
+				type: 'asset/resource'
 			}
 		],
 	},
@@ -65,17 +62,11 @@ module.exports = {
 			chunks: "app",
 			filename: "../../default.hbs",
 			template: "default.src.hbs",
-			inject: "head",
 			minify: false
 		}),
 		new MiniCssExtractPlugin({ filename: "[name].[chunkhash].css" }),
-		new StyleExtHtmlWebpackPlugin({
-			cssRegExp: /critical\..+\.css/i,
-			minify: true
-		}),
-		new ScriptExtHtmlWebpackPlugin({
-			chunks: "app",
-			defaultAttribute: "async"
+		new HTMLInlineCSSWebpackPlugin({
+			filter: name => /.*\.hbs|critical\..+\.css/i.test(name),
 		}),
 		new PreloadWebpackPlugin({
 			chunks: "app",
@@ -83,7 +74,7 @@ module.exports = {
 			include: "allAssets",
 			fileBlacklist: [/^critical\..+\.css$/, /^(?!crit-).*\.woff2$|\.(?:eot|svg|[ot]tf|woff)$/, /\.(?:LICENSE\.txt|map)$/]
 		}),
-		new FixStyleOnlyEntriesPlugin()
+		new RemoveEmptyScriptsPlugin()
 	],
 	optimization: {
 		minimize: true,
@@ -97,13 +88,13 @@ module.exports = {
 				},
 				extractComments: "some"
 			}),
-			new OptimizeCSSAssetsPlugin({
-				cssProcessorPluginOptions: {
+			new CssMinimizerPlugin({
+				minimizerOptions: {
 					preset: [
 						'advanced',
 						{
 							cssDeclarationSorter : {
-								order: 'alphabetically',
+								order: 'alphabetical',
 								keepOverrides: true
 							},
 							discardUnused: false,
@@ -114,18 +105,16 @@ module.exports = {
 					],
 				}
 			}),
-			new BrotliPlugin({
-				asset: "[path].br[query]",
+			new CompressionPlugin({
 				test: /\.(js|css|svg)$/,
+				algorithm: 'brotliCompress',
 				threshold: 1024,
-				minRatio: 0.9
+				minRatio: 0.9,
+				filename: "[path][base].br",
 			})
 		],
 		splitChunks: {
 			chunks: 'all'
 		}
-	},
-	node: {
-		setImmediate: false
 	}
 };
