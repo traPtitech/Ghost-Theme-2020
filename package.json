@@ -19,7 +19,7 @@
         "katex": "^0.13.19",
         "lozad": "^1.16.0",
         "normalize.css": "^8.0.1",
-        "swiper": "^6.5.0",
+        "swiper": "^7.1.0",
         "throttle-debounce": "^3.0.1"
     },
     "devDependencies": {

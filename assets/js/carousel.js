@@ -1,4 +1,4 @@
-import Swiper, {Navigation, Pagination, Lazy} from "swiper";
+import Swiper, { Navigation, Pagination, Lazy } from "swiper";
 import { debounce } from "throttle-debounce";
 
 const BREAKPOINT = 840
@@ -27,6 +27,7 @@ const initSwiper = ($featured, oldSwiper) => {
 			: smartphoneOption
 
 	return new Swiper($featured, {
+		modules: [Navigation, Pagination, Lazy],
 		loop: true,
 		centeredSlides : true,
 		preloadImages: false,
@@ -50,8 +51,6 @@ const initSwiper = ($featured, oldSwiper) => {
 export const setupCarousel = () => {
 	const $featured = document.querySelector('#featured')
 	if (!$featured) return;
-
-	Swiper.use([Navigation, Pagination, Lazy]);
 
 	let swiper = initSwiper($featured);
 	window.addEventListener('resize', debounce(100, () => {
