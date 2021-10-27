@@ -111,7 +111,7 @@
 		</a>
 		{{!-- Facebook --}}
 		<div class="fb-like" data-layout="button_count" data-action="like" data-size="large" data-share="false"></div>
-		<div class="fb-share-button" data-href="{{url}}" data-layout="button_count" data-size="large"></div>
+		<div class="fb-share-button" data-href="https://trap.jp{{url}}" data-layout="button_count" data-size="large"></div>
 		{{!-- WebShareAPI --}}
 		<div id="web-share" class="disabled"><span class="icon-fa" data-name="share-alt"></span><span>共有</span></div>
 		{{!-- Facebook (API) --}}
@@ -120,7 +120,12 @@
 </section>
 {{/post}}
 {{^is "page"}}
-	<iframe id="hyakkiyagyo" class="lozad" data-src="https://sysad.trap.show/hyakkiyagyo/page/{{post.slug}}/" scrolling="no"></iframe>
+	{{!-- 下書きのプレビューのときはダミーのものを表示する --}}
+	{{#if post.published_at}}
+		<iframe id="hyakkiyagyo" class="lozad" data-src="https://sysad.trap.show/hyakkiyagyo/page/{{post.slug}}/" scrolling="no"></iframe>
+	{{else}}
+		<iframe id="hyakkiyagyo" class="lozad" data-src="https://sysad.trap.show/hyakkiyagyo/" scrolling="no"></iframe>
+	{{/if}}
 	{{#if post.tags}}
 		{{#get "posts" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" limit="6"}}
 			{{#if posts.length}}
