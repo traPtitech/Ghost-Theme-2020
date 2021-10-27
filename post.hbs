@@ -120,7 +120,12 @@
 </section>
 {{/post}}
 {{^is "page"}}
-	<iframe id="hyakkiyagyo" class="lozad" data-src="https://sysad.trap.show/hyakkiyagyo/page/{{post.slug}}/" scrolling="no"></iframe>
+	{{!-- 下書きのプレビューのときはダミーのものを表示する --}}
+	{{#if post.published_at}}
+		<iframe id="hyakkiyagyo" class="lozad" data-src="https://sysad.trap.show/hyakkiyagyo/page/{{post.slug}}/" scrolling="no"></iframe>
+	{{else}}
+		<iframe id="hyakkiyagyo" class="lozad" data-src="https://sysad.trap.show/hyakkiyagyo/" scrolling="no"></iframe>
+	{{/if}}
 	{{#if post.tags}}
 		{{#get "posts" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" limit="6"}}
 			{{#if posts.length}}
