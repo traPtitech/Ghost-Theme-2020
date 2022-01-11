@@ -8,7 +8,11 @@
 
 	contain: strict;
 
-	.swiper-slide > a {
+	.splide__track {
+		height: 100%;
+	}
+
+	.splide__slide > a {
 		display: block;
 		position: relative;
 		height: 100%;
@@ -76,36 +80,5 @@
 				}
 			}
 		}
-	}
-
-	.swiper-button-prev, .swiper-button-next {
-		background-color: rgba(255,255,255,.5);
-		height: 100%;
-		width: 3em;
-		margin-top: 0;
-		top: 0;
-		transition: 250ms transform;
-		&:hover {
-			background-color: rgba(255,255,255,0.7);
-			transform: scaleX(1.2);
-		}
-		@media (max-width: 600px) {
-			width: auto;
-		}
-	}
-	.swiper-button-prev {
-		left: 0;
-		&:hover {
-			transform-origin: left;
-		}
-	}
-	.swiper-button-next {
-		right: 0;
-		&:hover {
-			transform-origin: right;
-		}
-	}
-	.swiper-pagination-bullet {
-		background-color: white;
 	}
 }

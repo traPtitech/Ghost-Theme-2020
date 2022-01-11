@@ -1,9 +1,10 @@
 {{!< default}}
 {{#get "posts" filter="tag:news" limit="4"}}
-	<section id="featured" class="swiper">
-		<div class="swiper-wrapper">
+	<section id="featured" class="splide">
+		<div class="splide__track">
+			<ul class="splide__list">
 				{{#foreach posts}}
-					<div class="swiper-slide">
+					<li class="splide__slide">
 						<a href="{{url}}">
 							{{#if feature_image}}
 								{{#if @first }}
@@ -14,26 +15,21 @@
 								{{else}}
 								<picture>
 									<source data-srcset="{{feature_image}}.webp?webp=1&width=640" type="image/webp" width="640">
-									<img data-src="{{feature_image}}?width=640" class="swiper-lazy" alt="{{title}} feature image" width="640">
+									<img data-src="{{feature_image}}?width=640" class="lozad" alt="{{title}} feature image" width="640">
 								</picture>
-								<div class="swiper-lazy-preloader"></div>
 								{{/if}}
 							{{else}}
-								<img data-src="{{asset "logo/icon_blue.svg"}}" class="swiper-lazy" alt="{{title}} feature image" width="602" height="400">
-								<div class="swiper-lazy-preloader"></div>
+								<img data-src="{{asset "logo/icon_blue.svg"}}" class="lozad" alt="{{title}} feature image" width="602" height="400">
 							{{/if}}
 							<div class="title">
 								<p>{{date published_at format="YYYY年M月D日"}}</p>
 								<h1>{{title}}</h1>
 							</div>
 						</a>
-					</div>
+					</li>
 				{{/foreach}}
+			</ul>
 		</div>
-		<div class="swiper-pagination"></div>
-
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
 	</section>
 {{/get}}
 <section class="about-trap">

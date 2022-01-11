@@ -1,0 +1,49 @@
+
+$main: #005BAC;
+$main-light: lighten($main, 20%);
+
+@use '@splidejs/splide/src/css/template/default/foundation/colors' with (
+  $main: $main,
+  $sub01: $main,
+  $sub02: $main,
+  $background: #ccc,
+  $background-active: $main
+);
+
+@use '@splidejs/splide/src/css/template/default/object/objects/arrow' with (
+  $size: 2.5em,
+  $opacity: false,
+  $opacity-hover: false,
+  $fill-hover: $main-light,
+  $transition: fill .2s linear,
+  $button-size: false,
+  $button-background: rgba(255, 255, 255, 0.7),
+  $left: 0,
+  $right: 0,
+);
+
+@use '@splidejs/splide/src/css/template/default/object/objects/pagination' with (
+  $dot-width: 10px,
+  $dot-height: 10px,
+  $dot-opacity: false,
+  $dot-transition: all .2s linear,
+  $dot-background: rgba(255, 255, 255, 0.2),
+  $dot-background-hover: rgba(255, 255, 255, 0.7),
+  $dot-background-active: rgba(255, 255, 255, 1),
+  $dot-transform-active: false
+);
+
+@forward '@splidejs/splide/src/css/template/default';
+
+@import '@splidejs/splide/dist/css/splide-core.min.css';
+
+.splide__arrow {
+  height: 100%;
+
+  &--prev {
+    padding-left: 1rem;
+  }
+  &--next {
+    padding-right: 1rem;
+  }
+}

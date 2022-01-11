@@ -22,6 +22,9 @@ const onLoad = () => {
 		})
 	}
 
+	// top page carousel
+	setupCarousel(); // lazyload used inside so lazyload should not be before here
+
 	// lazyload
 	const observer = lozad();
 	observer.observe();
@@ -29,8 +32,6 @@ const onLoad = () => {
 	// font awesome
 	loadIcon();
 
-	// top page carousel
-	setupCarousel();
 
 	// fixed header
 	setupHeaderThinToggle();
