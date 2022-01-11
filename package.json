@@ -14,12 +14,12 @@
         "@fortawesome/free-brands-svg-icons": "^5.15.4",
         "@fortawesome/free-solid-svg-icons": "^5.15.4",
         "@openfonts/source-code-pro_latin": "^1.44.2",
+        "@splidejs/splide": "^3.6.9",
         "core-js": "^3.19.0",
         "highlight.js": "^11.3.1",
         "katex": "^0.13.19",
         "lozad": "^1.16.0",
         "normalize.css": "^8.0.1",
-        "swiper": "^7.1.0",
         "throttle-debounce": "^3.0.1"
     },
     "devDependencies": {

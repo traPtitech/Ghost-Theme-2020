@@ -1095,6 +1095,11 @@
   resolved "https://registry.yarnpkg.com/@openfonts/source-code-pro_latin/-/source-code-pro_latin-1.44.2.tgz#e7daec6a7eccfc96ff9aff33ac36fc6953e74c8e"
   integrity sha512-RIivG6F3674+6SvXLu2WdkjHZ3gmBvuj7cO8fl5T3v9yph2MmCV/QZWXf+9dkYQYNf8OFKbWVjp2x4KdlioZrg==
 
+"@splidejs/splide@^3.6.9":
+  version "3.6.9"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-3.6.9.tgz#ee9041fb9f9bdc6a8fd06fa47536f76769b252a0"
+  integrity sha512-uQXmn0NUrlOhBCYJ8Qy4ZbCOu/fY7nTkEQUIjoKpuY10UJu1pddHquI/pmMCh/oIjhxDQFVd7TnDMq5m7JDdZA==
+
 "@trysound/sax@0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.1.1.tgz#3348564048e7a2d7398c935d466c0414ebb6a669"
@@ -1838,13 +1843,6 @@ dom-serializer@^1.0.1:
     domelementtype "^2.0.1"
     domhandler "^4.0.0"
     entities "^2.0.0"
-
-dom7@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/dom7/-/dom7-4.0.0.tgz#69c8fb9b170c92d64f385fdc37f81456e82b80a1"
-  integrity sha512-xOJ0LAHFwktyj8Xljz4R2wzRI+Y9mR0plkMP0WlqtwqAkqn/vbdAyRifiW/w8mXe17LGktntcAwsQ5fKVDBNYg==
-  dependencies:
-    ssr-window "^4.0.0"
 
 domelementtype@^2.0.1:
   version "2.0.1"
@@ -3196,11 +3194,6 @@ source-map@~0.7.2:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
 
-ssr-window@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-4.0.0.tgz#4ee82fc360c5f88a022f321740bcfec59ada1a61"
-  integrity sha512-qCg6wJNeGNTVcPK2KFNfwtHU1gA3UZDZdxogu+Ys5+Ue5PMOENxUb7sscpAWWo4mWOBkJRCwQ50IlyA7qZ0hxw==
-
 stable@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
@@ -3280,14 +3273,6 @@ svgo@^2.3.0, svgo@^2.7.0:
     csso "^4.2.0"
     nanocolors "^0.1.12"
     stable "^0.1.8"
-
-swiper@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-7.1.0.tgz#da0e2049a4447f937826c120b78d09e8ef66a256"
-  integrity sha512-uDsORU5ZS8q8Q0Mf4ml1FuOabjm3EWJOoFAUaENcIlgHhdr0sTPeX6BZZUaQ8qXWuBNEvz4XE2wJeVR7M03wIw==
-  dependencies:
-    dom7 "^4.0.0"
-    ssr-window "^4.0.0"
 
 tapable@^2.0.0, tapable@^2.1.1, tapable@^2.2.0:
   version "2.2.1"

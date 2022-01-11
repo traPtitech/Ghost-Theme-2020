@@ -1,59 +1,25 @@
-import Swiper, { Navigation, Pagination, Lazy } from "swiper";
-import { debounce } from "throttle-debounce";
+import { Splide } from "@splidejs/splide";
 
-const BREAKPOINT = 840
-const MAX_WIDTH = 1280
-
-const smartphoneOption = {
-	slidesPerView: 1,
-	spaceBetween: 0
-}
-
-const pcOption = {
-	slidesPerView: 2,
-	spaceBetween: 10,
-	watchSlidesProgress: true,
-	watchSlidesVisibility: true
-}
-
-const initSwiper = ($featured, oldSwiper) => {
-	if (oldSwiper) {
-		oldSwiper.destroy()
-	}
-
-	const options =
-		window.innerWidth >= BREAKPOINT
-			? pcOption
-			: smartphoneOption
-
-	return new Swiper($featured, {
-		modules: [Navigation, Pagination, Lazy],
-		loop: true,
-		centeredSlides : true,
-		preloadImages: false,
-		width: Math.min(window.innerWidth, MAX_WIDTH),
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev'
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			type: 'bullets',
-			clickable: true
-		},
-		lazy: {
-			loadOnTransitionStart: true
-		},
-		...options
+const initSplide = $featured => {
+	const splide = new Splide($featured, {
+		type: 'loop',
+		padding: '25%',
+		focus: 'center',
+		gap: 10,
+		breakpoints: {
+			840: {
+				padding: 0,
+				gap: 0
+			}
+		}
 	});
+
+	splide.mount();
 }
 
 export const setupCarousel = () => {
 	const $featured = document.querySelector('#featured')
 	if (!$featured) return;
 
-	let swiper = initSwiper($featured);
-	window.addEventListener('resize', debounce(100, () => {
-		swiper = initSwiper($featured, swiper);
-	}))
+	initSplide($featured);
 };
