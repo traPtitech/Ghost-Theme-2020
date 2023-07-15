@@ -1,33 +1,33 @@
 {{!< default}}
 <section class="listhead">
-	{{#is "author"}}
-		{{#if author.profile_image}}
-			<img src="{{author.profile_image}}" decoding="async" alt="{{author.name}} icon" height="256" width="256">
+	{{#is "primary_author"}}
+		{{#if primary_author.profile_image}}
+			<img src="{{primary_author.profile_image}}" decoding="async" alt="{{primary_author.name}} icon" height="256" width="256">
 		{{else}}
-			<img src="https://q.trap.jp/api/v3/public/icon/traP" decoding="async" alt="{{author.name}} icon" height="256" width="256">
+			<img src="https://q.trap.jp/api/v3/public/icon/traP" decoding="async" alt="{{primary_author.name}} icon" height="256" width="256">
 		{{/if}}
 	{{/is}}
 	<div>
-		{{#is "author"}}
-			{{#author}}
+		{{#is "primary_author"}}
+			{{#primary_author}}
 				<h1>
 					{{name}}
 					{{> author-link}}
 				</h1>
 				<p>{{bio}}</p>
-			{{/author}}
+			{{/primary_author}}
 		{{/is}}
 		{{#is "tag"}}
 			<h1>{{tag.name}}</h1>
 		{{/is}}
-		{{^is "author,tag"}}
+		{{^is "primary_author,tag"}}
 			<h1>記事一覧</h1>
 		{{/is}}
 	</div>
 </section>
 <section class="postlist">
-	{{#is "author"}}
-		<h1>{{author.name}}の書いた記事</h1>
+	{{#is "primary_author"}}
+		<h1>{{primary_author.name}}の書いた記事</h1>
 	{{/is}}
 	{{#is "tag"}}
 		<h1>{{tag.name}}に関する記事</h1>

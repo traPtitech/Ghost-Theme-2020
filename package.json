@@ -3,10 +3,12 @@
     "private": true,
     "version": "1.0.0",
     "engines": {
-        "ghost": ">=3.0.0",
-        "ghost-api": "v4"
+        "ghost": ">=5.0.0"
     },
-    "author": "traP",
+    "author": {
+        "name": "traP",
+        "email": "trapsysad@gmail.com"
+    },
     "scripts": {
         "build": "webpack"
     },
