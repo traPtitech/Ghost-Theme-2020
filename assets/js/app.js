@@ -9,7 +9,7 @@ import { loadTwitterOnScrollOrTouch } from './load-twitter';
 import { loadSharesOnShow } from './load-shares';
 import { loadIcon } from './load-icon';
 
-import '../scss/style.scss';
+import '../css/style.scss';
 
 const onLoad = () => {
 	// prepare article imgs for lazyload
