@@ -1,4 +1,8 @@
 node_modules
 assets/built
-assets/css/tmp
+assets/css
 default.hbs
+assets/js/*.js
+assets/js/*.br
+assets/js/*.txt
+assets/fonts
