@@ -14,7 +14,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
     mode: 'production',
     entry: {
-        app: './assets/js/src/app.js',
+        app: './assets/src/app.js',
         critical: './assets/scss/critical.scss'
     },
     output: {
