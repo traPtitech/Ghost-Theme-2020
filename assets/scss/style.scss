@@ -8,3 +8,10 @@
 @import 'layout';
 @import 'markdown';
 @import 'article';
+.kg-width-wide img {
+  max-width: 85vw;
+}
+
+.kg-width-full img {
+  max-width: 100vw;
+}
