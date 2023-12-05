@@ -1,7 +1,7 @@
 export const setupHyakkiyagyo = () => {
 	const $hyakkiyagyo = document.querySelector("#hyakkiyagyo")
 	if (!$hyakkiyagyo) return;
-	const hyakkiyagyoOrigin = "https://sysad.trap.show"
+	const hyakkiyagyoOrigin = "https://hyakkiyagyo.trap.jp"
 
 	// adjust iframe size
 	window.addEventListener("message", (event) => {
