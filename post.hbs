@@ -53,7 +53,10 @@
 			</div>
 		{{/foreach}}
 		</div>
-		<div class="sub-authors">
+		{{/is}}
+	</div>
+	{{#is "page"}}
+	<div class="sub-authors">
 		{{#foreach authors from="4"}}
 			<div class="author">
 				<a href="{{url}}">
@@ -65,9 +68,8 @@
 				</a>
 			</div>
 		{{/foreach}}
-		</div>
-		{{/is}}
 	</div>
+	{{/is}}
 </section>
 <article>
 	{{#has tag="R15"}}
