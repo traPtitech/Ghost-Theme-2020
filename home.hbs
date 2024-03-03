@@ -110,6 +110,16 @@
 			</div>
 		</div>
 	</div>
+	<div class="pickup-series">
+		<h2><a href="/kaggle/">Kaggle班</a></h2>
+		<div class="pickup-entries-wrapper">
+			<div class="pickup-entries">
+				{{#get "posts" filter="tag:hash-pickups-kaggle" limit="3"}}
+					{{> pickups}}
+				{{/get}}
+			</div>
+		</div>
+	</div>
 </section>
 <section class="postlist">
 	<h1>ブログへの投稿</h1>
