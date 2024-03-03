@@ -55,6 +55,7 @@
 		</div>
 		{{/is}}
 	</div>
+	{{^is "page"}}
 	<div class="sub-authors">
 		{{#foreach authors from="4"}}
 			<div class="author">
@@ -68,6 +69,7 @@
 			</div>
 		{{/foreach}}
 	</div>
+	{{/is}}
 </section>
 <article>
 	{{#has tag="R15"}}
