@@ -1,6 +1,6 @@
 /* ヘッダー固定時のスクロール調整用 */
 html {
-	@media (min-width: 900px) {
+	@media (min-width: 1024px) {
 		scroll-padding-top: $header-thin-height;
 	}
 }
@@ -14,7 +14,7 @@ header {
 	flex-direction: column;
 	height: auto;
 	max-height: $header-sm-height;
-	@media (min-width: 900px) {
+	@media (min-width: 1024px) {
 		flex-direction: row;
 		height: $header-height;
 		max-height: auto;
@@ -25,7 +25,7 @@ header {
 	contain: content;
 
 	/* ヘッダー固定関連 */
-	@media (min-width: 900px) {
+	@media (min-width: 1024px) {
 		position: sticky;
 		top: 0;
 		z-index: 3;
@@ -56,7 +56,7 @@ header {
 
 	.circleLogo {
 		margin-top: 1.6rem 0;
-		@media (min-width: 900px) {
+		@media (min-width: 1024px) {
 			margin: 1.6rem;
 		}
 	}
@@ -87,7 +87,7 @@ ul.nav {
 		}
 	}
 
-	@media (min-width: 900px) {
+	@media (min-width: 1024px) {
 		flex-wrap: nowrap;
 		margin: 0 1rem 0 0;
 		a {
